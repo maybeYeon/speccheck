@@ -6,10 +6,18 @@
 """
 import json
 import os
+import socket
 import sys
+import time
 import urllib.parse
 import urllib.request
 from datetime import datetime, timezone, timedelta
+
+# GitHub 러너에서 IPv6 경로가 데이터포털과 안 맞아 타임아웃 나는 경우가 있어 IPv4 강제
+_orig_getaddrinfo = socket.getaddrinfo
+def _ipv4_only(host, port, family=0, *args, **kwargs):
+    return _orig_getaddrinfo(host, port, socket.AF_INET, *args, **kwargs)
+socket.getaddrinfo = _ipv4_only
 
 KEY = os.environ.get("DATA_GO_KR_API_KEY")
 if not KEY:
@@ -27,8 +35,19 @@ params = {
 url = BASE + "?" + urllib.parse.urlencode(params)
 
 req = urllib.request.Request(url, headers={"User-Agent": "speccheck-bot"})
-with urllib.request.urlopen(req, timeout=30) as r:
-    body = r.read().decode("utf-8")
+body = None
+last_err = None
+for attempt in range(1, 6):
+    try:
+        with urllib.request.urlopen(req, timeout=40) as r:
+            body = r.read().decode("utf-8")
+        break
+    except Exception as e:
+        last_err = e
+        print(f"시도 {attempt}/5 실패: {e}", flush=True)
+        time.sleep(15)
+if body is None:
+    sys.exit(f"5회 재시도 모두 실패: {last_err}")
 
 try:
     data = json.loads(body)

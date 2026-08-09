@@ -86,7 +86,7 @@ header.top{display:flex; align-items:flex-end; justify-content:space-between; ga
 .selected-bar{
   margin:12px 18px 0; padding:10px 12px 11px; background:var(--paper);
   border:1px solid var(--line); border-radius:10px;
-  position:sticky; top:10px; z-index:20; box-shadow:var(--shadow);
+  position:sticky; top:56px; z-index:20; box-shadow:var(--shadow);
 }
 .selected-bar .sb-title{
   display:flex; justify-content:space-between; align-items:baseline;
@@ -249,6 +249,59 @@ footer{
   margin-top:48px; padding-top:18px; border-top:1px solid var(--line);
   font-size:12px; color:var(--sub); line-height:1.7;
 }
+/* ── 시안 A: 헤더 · 탭 · 푸터 구조 ── */
+.site-head{position:sticky; top:0; z-index:50; background:var(--card); border-bottom:1px solid var(--line)}
+.site-head .hd{max-width:1180px; margin:0 auto; padding:10px 20px; display:flex; align-items:center; gap:14px}
+.site-head h1{margin:0; display:flex}
+.site-head svg.logo{height:26px; width:auto; display:block}
+.site-tabs{display:flex; gap:2px; margin-left:6px}
+.tab-btn{border:none; background:none; padding:8px 13px; border-radius:8px; font-size:14px; font-weight:700; color:var(--sub)}
+.tab-btn:hover{background:var(--chip)}
+.tab-btn.on{color:var(--accent); background:var(--accent-soft)}
+.tab-btn .bdg{display:inline-block; min-width:18px; text-align:center; padding:0 5px; border-radius:10px; background:var(--accent); color:#fff; font-size:11px; font-variant-numeric:tabular-nums}
+.hd .spacer{flex:1}
+main.wrap{display:block; padding-top:22px}
+.tabpane{display:none}
+.tabpane.active{display:block}
+.pane-title{font-size:20px; margin:4px 0 6px}
+.intro{color:var(--sub); font-size:14px; margin:0 0 16px}
+.live-strip{display:flex; align-items:center; justify-content:space-between; gap:12px;
+  background:var(--accent-soft); border:1px solid var(--accent); border-radius:12px;
+  padding:10px 16px; margin-bottom:14px; font-size:13.5px; font-weight:700; color:var(--accent-ink)}
+.goal-panel{margin-bottom:18px}
+.goal-panel .goal-box{padding:16px 18px 18px}
+.xgroup{font-size:12.5px; color:var(--sub); letter-spacing:.06em; margin:22px 0 8px; font-weight:700}
+.xrow{background:var(--card); border:1px solid var(--line); border-radius:10px; margin-bottom:8px; overflow:hidden}
+.xrow summary{display:flex; justify-content:space-between; align-items:center; gap:10px;
+  padding:11px 16px; cursor:pointer; font-weight:700; font-size:14px; list-style:none}
+.xrow summary::-webkit-details-marker{display:none}
+.xrow summary:hover{background:var(--chip)}
+.xrow .xmeta{font-size:12px; color:var(--sub); font-variant-numeric:tabular-nums; display:flex; gap:8px; align-items:center; font-weight:400; flex:none}
+.xrow .xbody{padding:2px 16px 14px; font-size:13px}
+.xbody ul{list-style:none; margin:8px 0 10px; padding:0; display:flex; flex-direction:column; gap:5px}
+.xbody li{display:flex; align-items:baseline; gap:7px}
+.xbody li .ic{width:16px; text-align:center; flex:none}
+.xbody li.ok .ic{color:var(--accent)}
+.xbody li.soon .ic{color:var(--plan)}
+.xbody li.no .ic{color:var(--sub)}
+.tag.off{background:var(--chip); color:var(--sub)}
+.sched-wrap{overflow-x:auto; background:var(--card); border:1px solid var(--line); border-radius:12px}
+.sched{width:100%; border-collapse:collapse; font-size:13px; min-width:680px}
+.sched th{text-align:left; padding:10px 14px; border-bottom:1px solid var(--line); color:var(--sub); font-size:12px; letter-spacing:.04em}
+.sched td{padding:9px 14px; border-bottom:1px solid var(--line); vertical-align:top}
+.sched tr:last-child td{border-bottom:none}
+.sched a{color:var(--accent-ink); font-weight:700; text-decoration:none}
+.sched a:hover{text-decoration:underline}
+footer{max-width:1180px; margin:36px auto 24px; padding:18px 20px 0}
+.bottom-nav{display:none}
+@media (max-width:900px){
+  .site-tabs{display:none}
+  .bottom-nav{display:flex; position:fixed; left:0; right:0; bottom:0; z-index:60;
+    background:var(--card); border-top:1px solid var(--line); padding-bottom:env(safe-area-inset-bottom)}
+  .bottom-nav .tab-btn{flex:1; border-radius:0; padding:12px 4px; font-size:12.5px}
+  body{padding-bottom:70px}
+  footer{margin-bottom:84px}
+}
 @media (prefers-reduced-motion: reduce){ *{transition:none !important} }
 @media (max-width:560px){
   .wrap{padding:18px 14px 60px}
@@ -259,7 +312,7 @@ footer{
   .summary .num{font-size:19px}
   .summary .end{margin-left:0; width:100%; justify-content:flex-start}
   .brand p{font-size:13.5px}
-  .selected-bar{top:6px}
+  .selected-bar{top:52px}
   .job h3{padding-right:66px; font-size:15.5px}
 }
 </style>
@@ -267,20 +320,31 @@ footer{
 <body>
 
 
-<div class="wrap">
-  <header class="top">
-    <div class="brand">
+<header class="site-head">
+  <div class="hd">
       <h1 aria-label="스펙체크"><svg class="logo" viewBox="0 0 478 100" role="img"><rect x="13" y="13" width="74" height="74" rx="19" fill="none" stroke="var(--accent)" stroke-width="9" transform="rotate(-7 50 50)"/><path d="M31 52 L45.5 66.5 L71 35.5" fill="none" stroke="var(--accent)" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/><g transform="translate(126,2)"><path fill="var(--ink)" d="M83.80000000000001 69.9V81.9H3.4000000000000004V69.9ZM50.400000000000006 17.200000000000003Q50.400000000000006 29.400000000000006 58.6 37.400000000000006Q67.3 45.900000000000006 80.80000000000001 49.90000000000001L73.4 59.900000000000006Q57.900000000000006 54.500000000000014 47.5 44.10000000000001Q45.300000000000004 41.900000000000006 43.6 39.50000000000001Q41.900000000000006 41.900000000000006 39.7 44.10000000000001Q29.200000000000003 54.500000000000014 13.8 59.900000000000006L6.5 50.00000000000001Q19.700000000000003 45.70000000000001 28.6 37.400000000000006Q36.800000000000004 29.70000000000001 36.800000000000004 17.200000000000003V6.200000000000003H50.400000000000006Z M134.10000000000002 6.700000000000003V18.200000000000003H128.0V43.10000000000001Q132.7 42.80000000000001 137.3 42.400000000000006V53.80000000000001Q126.2 55.000000000000014 113.9 55.000000000000014H88.9V43.50000000000001H96.7V18.200000000000003H89.9V6.700000000000003ZM115.9 18.200000000000003H108.80000000000001V43.50000000000001H115.9ZM139.60000000000002 36.30000000000001H131.10000000000002V24.10000000000001H139.60000000000002V3.200000000000003H151.8V56.70000000000001H139.60000000000002ZM155.2 3.200000000000003H167.8V56.70000000000001H155.2ZM154.4 93.80000000000001V71.30000000000001H107.5V59.400000000000006H167.8V93.80000000000001Z M205.9 27.900000000000006Q205.9 38.900000000000006 209.9 47.90000000000001Q214.60000000000002 58.500000000000014 222.9 67.4L213.60000000000002 74.60000000000001Q204.3 64.00000000000001 199.4 54.30000000000001Q194.10000000000002 64.70000000000002 184.5 75.00000000000001L174.70000000000002 67.60000000000001Q183.6 59.20000000000001 189.0 47.70000000000001Q193.0 40.20000000000001 193.20000000000002 28.000000000000007V24.000000000000007H177.6V12.000000000000014H193.20000000000002V1.8000000000000114H205.9V12.000000000000014H220.10000000000002V24.000000000000007H205.9ZM242.2 3.200000000000003H255.4V92.70000000000002H242.2ZM236.9 92.70000000000002H224.0V44.80000000000001H213.10000000000002V32.20000000000001H224.0V3.200000000000003H236.9Z M334.6 7.800000000000011V34.900000000000006Q334.6 54.80000000000001 331.5 68.9H345.40000000000003V80.9H265.0V68.9H318.40000000000003Q320.40000000000003 59.20000000000001 321.0 48.30000000000001H272.70000000000005V37.00000000000001H321.20000000000005V19.80000000000001H273.3V7.800000000000011Z"/></g></svg></h1>
-      <p>보유하거나 취득 예정인 자격증과 어학점수를 체크하면, 지원 가능한 직무·업종과 신입 초봉 참고 범위를 보여드립니다.</p>
-    </div>
+    <nav class="site-tabs" aria-label="메뉴">
+      <button class="tab-btn on" data-tab="input" type="button">스펙 입력</button>
+      <button class="tab-btn" data-tab="results" type="button">매칭 결과 <span class="bdg" id="tabBadge" hidden>0</span></button>
+      <button class="tab-btn" data-tab="explore" type="button">직무 탐색</button>
+      <button class="tab-btn" data-tab="schedule" type="button">시험 일정</button>
+    </nav>
+    <div class="spacer"></div>
     <div class="head-btns">
       <button class="reset-btn" id="themeBtn" title="라이트/다크 테마 전환">🌓 시스템</button>
       <button class="reset-btn" id="resetBtn">선택 초기화</button>
     </div>
-  </header>
+  </div>
+</header>
 
-  <div class="layout">
-    <!-- ── 입력 패널 ── -->
+<main class="wrap">
+  <!-- ══ 탭 1: 스펙 입력 ══ -->
+  <section class="tabpane active" id="pane-input">
+    <p class="intro">보유하거나 취득 예정인 자격증과 어학점수를 체크하면, 지원 가능한 직무·업종과 신입 초봉 참고 범위를 보여드립니다.</p>
+    <div class="live-strip" id="liveStrip" hidden>
+      <span id="lsText"></span>
+      <button class="share-btn" id="lsGo" type="button">결과 보기 →</button>
+    </div>
     <div class="panel" id="inputPanel">
       <div class="panel-head">
         <h2>1. 자격증 선택</h2>
@@ -295,16 +359,11 @@ footer{
       <div class="divider"></div>
       <div class="section-label">2. 어학 점수</div>
       <div class="lang-grid" id="langGrid"></div>
-      <div class="divider"></div>
-      <div class="section-label">3. 목표 직무로 역확인</div>
-      <p class="section-sub">가고 싶은 직무를 고르면 필요한 스펙과 내 충족 현황을 보여드립니다.</p>
-      <div class="goal-box">
-        <select id="goalSel" aria-label="목표 직무 선택"><option value="">직무를 선택하세요</option></select>
-        <div class="goal-out" id="goalOut"></div>
-      </div>
     </div>
+  </section>
 
-    <!-- ── 결과 패널 ── -->
+  <!-- ══ 탭 2: 매칭 결과 ══ -->
+  <section class="tabpane" id="pane-results">
     <div class="results-col">
       <div class="summary" id="summaryBar">
         <div class="stat"><span class="num" id="sHave">0</span><span class="lbl">보유 자격증</span></div>
@@ -335,7 +394,60 @@ footer{
       </div>
       <div class="results" id="results"></div>
     </div>
-  </div>
+  </section>
+
+  <!-- ══ 탭 3: 직무 탐색 ══ -->
+  <section class="tabpane" id="pane-explore">
+    <h2 class="pane-title">직무 탐색</h2>
+    <p class="intro">가고 싶은 직무를 고르거나 목록에서 펼쳐서, 필요한 스펙과 내 충족 현황을 확인하세요.</p>
+    <div class="panel goal-panel">
+      <div class="goal-box">
+        <select id="goalSel" aria-label="목표 직무 선택"><option value="">직무를 선택하세요</option></select>
+        <div class="goal-out" id="goalOut"></div>
+      </div>
+    </div>
+    <div id="exploreList"></div>
+  </section>
+
+  <!-- ══ 탭 4: 시험 일정 ══ -->
+  <section class="tabpane" id="pane-schedule">
+    <h2 class="pane-title">시험 일정 바로가기</h2>
+    <p class="intro">정확한 접수·시험일은 매년 바뀌므로 주관처 공식 일정 페이지로 연결합니다. 회차는 통상 기준입니다.</p>
+    <div class="sched-wrap"><table class="sched">
+      <tr><th>주관처 · 시험</th><th>대상 자격</th><th>연간 회차 (통상)</th><th>공식 일정</th></tr>
+      <tr><td>한국산업인력공단 (국가기술자격)</td><td>기사 · 산업기사 · 기능사 전 종목</td><td>기사·산업기사 연 3회 / 기능사 연 4회</td><td><a href="https://www.q-net.or.kr" target="_blank" rel="noopener">q-net.or.kr</a></td></tr>
+      <tr><td>한국산업인력공단 (국가전문자격)</td><td>물류관리사 · 직업상담사 · 사회조사분석사 · 사회복지사 1급</td><td>종목별 연 1~2회</td><td><a href="https://www.q-net.or.kr" target="_blank" rel="noopener">q-net.or.kr</a></td></tr>
+      <tr><td>대한상공회의소</td><td>컴퓨터활용능력 · 워드프로세서 · 유통관리사 · 무역영어</td><td>컴활·워드 상시 / 유통관리사 연 3회</td><td><a href="https://license.korcham.net" target="_blank" rel="noopener">license.korcham.net</a></td></tr>
+      <tr><td>한국세무사회</td><td>전산회계 · 전산세무</td><td>연 6회 내외</td><td><a href="https://license.kacpta.or.kr" target="_blank" rel="noopener">license.kacpta.or.kr</a></td></tr>
+      <tr><td>한국공인회계사회 AT</td><td>FAT · TAT</td><td>연 6회 내외</td><td><a href="https://at.kicpa.or.kr" target="_blank" rel="noopener">at.kicpa.or.kr</a></td></tr>
+      <tr><td>삼일회계법인</td><td>재경관리사 · 회계관리</td><td>연 8회 내외</td><td><a href="https://www.samilexam.com" target="_blank" rel="noopener">samilexam.com</a></td></tr>
+      <tr><td>한국데이터산업진흥원</td><td>SQLD · SQLP · ADsP · ADP · 빅데이터분석기사</td><td>종목별 연 2~4회</td><td><a href="https://www.dataq.or.kr" target="_blank" rel="noopener">dataq.or.kr</a></td></tr>
+      <tr><td>한국방송통신전파진흥원</td><td>정보보안기사 · 산업기사</td><td>연 2~3회</td><td><a href="https://www.cq.or.kr" target="_blank" rel="noopener">cq.or.kr</a></td></tr>
+      <tr><td>한국정보통신진흥협회</td><td>리눅스마스터</td><td>연 2~4회</td><td><a href="https://www.ihd.or.kr" target="_blank" rel="noopener">ihd.or.kr</a></td></tr>
+      <tr><td>한국정보통신자격협회</td><td>네트워크관리사</td><td>연 4회 이상</td><td><a href="https://www.icqa.or.kr" target="_blank" rel="noopener">icqa.or.kr</a></td></tr>
+      <tr><td>한국생산성본부</td><td>ITQ · GTQ · ERP정보관리사</td><td>매월 시행</td><td><a href="https://license.kpc.or.kr" target="_blank" rel="noopener">license.kpc.or.kr</a></td></tr>
+      <tr><td>금융투자협회</td><td>투자자산운용사 · 금융투자분석사 · 펀드/증권투자권유</td><td>종목별 연 1~3회</td><td><a href="https://license.kofia.or.kr" target="_blank" rel="noopener">license.kofia.or.kr</a></td></tr>
+      <tr><td>한국FPSB</td><td>AFPK</td><td>연 4회</td><td><a href="https://www.fpsbkorea.org" target="_blank" rel="noopener">fpsbkorea.org</a></td></tr>
+      <tr><td>한국금융연수원</td><td>은행FP (자산관리사)</td><td>연 3회</td><td><a href="https://www.kbi.or.kr" target="_blank" rel="noopener">kbi.or.kr</a></td></tr>
+      <tr><td>한국보건의료인국가시험원</td><td>간호조무사 · 영양사 · 위생사 · 요양보호사</td><td>종목별 연 1회~상시</td><td><a href="https://www.kuksiwon.or.kr" target="_blank" rel="noopener">kuksiwon.or.kr</a></td></tr>
+      <tr><td>국사편찬위원회</td><td>한국사능력검정 (한능검)</td><td>연 4~6회</td><td><a href="https://www.historyexam.go.kr" target="_blank" rel="noopener">historyexam.go.kr</a></td></tr>
+      <tr><td>KBS한국어진흥원</td><td>KBS한국어능력시험</td><td>연 4회 내외</td><td><a href="https://www.klt.or.kr" target="_blank" rel="noopener">klt.or.kr</a></td></tr>
+      <tr><td>한국언어문화연구원</td><td>국어능력인증시험 (ToKL)</td><td>연 5회 내외</td><td><a href="https://www.tokl.or.kr" target="_blank" rel="noopener">tokl.or.kr</a></td></tr>
+      <tr><td>한국어문회</td><td>한자능력검정</td><td>연 4회</td><td><a href="https://www.hanja.re.kr" target="_blank" rel="noopener">hanja.re.kr</a></td></tr>
+      <tr><td>한국경제신문 / 매일경제</td><td>TESAT · 매경TEST</td><td>연 6~8회</td><td><a href="https://www.tesat.or.kr" target="_blank" rel="noopener">tesat.or.kr</a> · <a href="https://exam.mk.co.kr" target="_blank" rel="noopener">exam.mk.co.kr</a></td></tr>
+      <tr><td>한국TOEIC위원회</td><td>TOEIC · TOEIC Speaking</td><td>월 2회 내외</td><td><a href="https://exam.toeic.co.kr" target="_blank" rel="noopener">exam.toeic.co.kr</a></td></tr>
+      <tr><td>TEPS관리위원회</td><td>TEPS</td><td>월 1~2회</td><td><a href="https://www.teps.or.kr" target="_blank" rel="noopener">teps.or.kr</a></td></tr>
+      <tr><td>멀티캠퍼스</td><td>OPIc</td><td>상시 (주 단위)</td><td><a href="https://www.opic.or.kr" target="_blank" rel="noopener">opic.or.kr</a></td></tr>
+      <tr><td>JLPT / JPT</td><td>JLPT · JPT (일본어)</td><td>JLPT 연 2회 (7·12월) / JPT 월 1~2회</td><td><a href="https://www.jlpt.or.kr" target="_blank" rel="noopener">jlpt.or.kr</a> · <a href="https://www.jpt.co.kr" target="_blank" rel="noopener">jpt.co.kr</a></td></tr>
+      <tr><td>HSK한국사무국</td><td>HSK (중국어)</td><td>월 1회 내외</td><td><a href="https://www.hsk.or.kr" target="_blank" rel="noopener">hsk.or.kr</a></td></tr>
+      <tr><td>한국교통안전공단 TS</td><td>초경량비행장치조종자 (드론)</td><td>상시</td><td><a href="https://lic.kotsa.or.kr" target="_blank" rel="noopener">lic.kotsa.or.kr</a></td></tr>
+      <tr><td>도로교통공단</td><td>운전면허</td><td>상시</td><td><a href="https://www.safedriving.or.kr" target="_blank" rel="noopener">safedriving.or.kr</a></td></tr>
+      <tr><td>한국관세물류협회</td><td>보세사</td><td>연 1회</td><td><a href="https://www.kcla.kr" target="_blank" rel="noopener">kcla.kr</a></td></tr>
+      <tr><td>한국정보평가협회</td><td>CS리더스관리사</td><td>매월</td><td><a href="https://www.kie.or.kr" target="_blank" rel="noopener">kie.or.kr</a></td></tr>
+      <tr><td>AWS</td><td>AWS 공인 자격</td><td>상시 (테스트센터·온라인)</td><td><a href="https://aws.amazon.com/ko/certification/" target="_blank" rel="noopener">aws.amazon.com</a></td></tr>
+    </table></div>
+  </section>
+</main>
 
   <footer>
     <b>데이터 출처(참고)</b> — Q-Net·한국산업인력공단(자격 종목·개편 정보), 고용노동부 임금직무정보시스템·워크넷(임금 통계), 사람인·잡코리아(채용공고 요구 스펙 경향).
@@ -344,7 +456,13 @@ footer{
     국가기술자격 전 종목(500여 종)이 아닌 채용 수요 중심의 큐레이션입니다.<br>
     서체: 현대하모니 (타이포디자인연구소 · 무료 배포). 이 서비스는 취업 정보 참고용이며, 특정 결과를 보장하지 않습니다.
   </footer>
-</div>
+
+<nav class="bottom-nav" aria-label="모바일 메뉴">
+  <button class="tab-btn on" data-tab="input" type="button">입력</button>
+  <button class="tab-btn" data-tab="results" type="button">결과</button>
+  <button class="tab-btn" data-tab="explore" type="button">탐색</button>
+  <button class="tab-btn" data-tab="schedule" type="button">일정</button>
+</nav>
 
 <script>
 /* ───────── 데이터셋 ───────── */
@@ -694,6 +812,7 @@ function refreshAll(){
   renderCerts(document.getElementById('certFilter').value);
   renderResults();
   renderGoal();
+  renderExplore();
 }
 
 function renderLangs(){
@@ -819,6 +938,16 @@ function renderResults(){
   document.getElementById('sPlan').textContent = planCnt;
   document.getElementById('sLang').textContent = langCnt;
   document.getElementById('sMatch').textContent = now.length + plan.length;
+  const totalMatch = now.length + plan.length;
+  const bdg = document.getElementById('tabBadge');
+  if(bdg){ bdg.hidden = totalMatch===0; bdg.textContent = totalMatch; }
+  const strip = document.getElementById('liveStrip');
+  if(strip){
+    const hasSpec = (haveCnt+planCnt+langCnt) > 0;
+    strip.hidden = !hasSpec;
+    if(hasSpec) document.getElementById('lsText').textContent =
+      totalMatch ? `지금 스펙으로 ${totalMatch}개 직무가 매칭됩니다` : '아직 매칭 직무가 없어요 — 스펙을 더 선택해 보세요';
+  }
   document.getElementById('sLead').textContent =
     (haveCnt+planCnt+langCnt)===0 ? '왼쪽에서 스펙을 선택해 보세요' :
     now.length+plan.length===0 ? '아직 매칭된 직무가 없어요' : '';
@@ -872,11 +1001,7 @@ function initGoalSelect(){
   });
   sel.addEventListener('change', renderGoal);
 }
-function renderGoal(){
-  const sel = document.getElementById('goalSel');
-  const out = document.getElementById('goalOut');
-  const job = JOBS.find(j => j.id===sel.value);
-  if(!job){ out.innerHTML=''; return; }
+function jobChecklist(job){
   const e = evalJob(job);
   let items = '';
   (job.certs||[]).forEach(id => {
@@ -898,12 +1023,37 @@ function renderGoal(){
     : e.status==='plan'
     ? '<span class="goal-status plan">취득 예정 자격증까지 따면 지원 가능합니다</span>'
     : '<span class="goal-status none">아직 요건 스펙이 없습니다 — 위 목록에서 하나를 준비해 보세요</span>';
+  return {status:e.status, html: `${anyNote}<ul>${items}</ul>${status}`};
+}
+function renderGoal(){
+  const sel = document.getElementById('goalSel');
+  const out = document.getElementById('goalOut');
+  const job = JOBS.find(j => j.id===sel.value);
+  if(!job){ out.innerHTML=''; return; }
   out.innerHTML = `
     <div class="g-sal">초봉 참고 ${fmtSal(job.sal)}</div>
     <div class="g-inds">${job.inds}</div>
-    ${anyNote}
-    <ul>${items}</ul>
-    ${status}`;
+    ${jobChecklist(job).html}`;
+}
+function renderExplore(){
+  const box = document.getElementById('exploreList');
+  if(!box) return;
+  const groups = {};
+  JOBS.forEach(j => { (groups[j.g] = groups[j.g] || []).push(j); });
+  let html = '';
+  Object.keys(groups).forEach(g => {
+    html += `<h3 class="xgroup">${g}</h3>`;
+    groups[g].forEach(j => {
+      const c = jobChecklist(j);
+      const st = c.status==='now' ? '<span class="tag now">지원가능</span>'
+        : c.status==='plan' ? '<span class="tag plan">취득 시</span>'
+        : '<span class="tag off">스펙 필요</span>';
+      html += `<details class="xrow"><summary><span>${j.title}</span>
+        <span class="xmeta">${fmtSal(j.sal)} ${st}</span></summary>
+        <div class="xbody"><div class="g-inds" style="margin-bottom:4px">${j.inds}</div>${c.html}</div></details>`;
+    });
+  });
+  box.innerHTML = html;
 }
 
 /* ───────── 기능 B: 결과 공유 링크 · 공유코드 ───────── */
@@ -996,6 +1146,7 @@ document.getElementById('resetBtn').addEventListener('click', () => {
   renderLangs();
   renderResults();
   renderGoal();
+  renderExplore();
 });
 document.getElementById('certFilter').addEventListener('input', e => renderCerts(e.target.value));
 
@@ -1016,12 +1167,22 @@ document.getElementById('themeBtn').addEventListener('click', () => {
   applyTheme(themeMode);
 });
 
+/* ───────── 탭 전환 ───────── */
+function switchTab(name){
+  document.querySelectorAll('.tabpane').forEach(p => p.classList.toggle('active', p.id === 'pane-'+name));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('on', b.dataset.tab === name));
+  window.scrollTo({top:0});
+}
+document.querySelectorAll('.tab-btn').forEach(b => b.addEventListener('click', () => switchTab(b.dataset.tab)));
+document.getElementById('lsGo').addEventListener('click', () => switchTab('results'));
+
 loadState();
 initGoalSelect();
 renderSelected();
 renderCerts('');
 renderLangs();
 renderResults();
+renderExplore();
 </script>
 
 </body>

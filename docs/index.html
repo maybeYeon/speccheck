@@ -292,6 +292,14 @@ main.wrap{display:block; padding-top:22px}
 .sched tr:last-child td{border-bottom:none}
 .sched a{color:var(--accent-ink); font-weight:700; text-decoration:none}
 .sched a:hover{text-decoration:underline}
+.live-jobs{background:var(--card); border:1px solid var(--line); border-radius:12px; margin-bottom:14px; overflow:hidden}
+.live-jobs summary{padding:11px 16px; cursor:pointer; font-weight:700; font-size:13.5px; list-style:none; display:flex; align-items:center; gap:8px; flex-wrap:wrap}
+.live-jobs summary::-webkit-details-marker{display:none}
+.live-jobs summary:hover{background:var(--chip)}
+.live-jobs ul{list-style:none; margin:0; padding:4px 16px 12px; display:flex; flex-direction:column; gap:7px; font-size:13px}
+.live-jobs a{color:var(--accent-ink); text-decoration:none; font-weight:700}
+.live-jobs a:hover{text-decoration:underline}
+.live-jobs .lj-meta{color:var(--sub); font-size:11.5px; white-space:nowrap}
 footer{max-width:1180px; margin:36px auto 24px; padding:18px 20px 0}
 .bottom-nav{display:none}
 @media (max-width:900px){
@@ -392,6 +400,7 @@ footer{max-width:1180px; margin:36px auto 24px; padding:18px 20px 0}
         ⚠ 초봉 범위는 <b>2025–2026년 채용공고·임금통계를 참고한 추정치</b>(세전 연봉, 만원 단위)입니다.
         기업 규모·지역·직군에 따라 실제와 차이가 있을 수 있으며, 참고용으로만 활용하세요.
       </div>
+      <div id="liveJobs"></div>
       <div class="results" id="results"></div>
     </div>
   </section>
@@ -1175,6 +1184,21 @@ function switchTab(name){
 }
 document.querySelectorAll('.tab-btn').forEach(b => b.addEventListener('click', () => switchTab(b.dataset.tab)));
 document.getElementById('lsGo').addEventListener('click', () => switchTab('results'));
+
+/* ───────── 공공기관 채용공고 자동 수집분 표시 (GitHub Pages에서만 동작) ───────── */
+fetch('jobs-live.json?t=' + Date.now())
+  .then(r => r.ok ? r.json() : null)
+  .then(d => {
+    if(!d || !d.postings || !d.postings.length) return;
+    const box = document.getElementById('liveJobs');
+    const fmt = s => s && s.length===8 ? `~${s.slice(4,6)}.${s.slice(6,8)} 마감` : '';
+    box.innerHTML = `<details class="live-jobs" open>
+      <summary>📢 지금 접수 중인 공공기관 공고 <span class="tag rec">${d.count}건 · ${d.updated} 자동 수집</span></summary>
+      <ul>` + d.postings.slice(0,12).map(p =>
+        `<li><a href="${p.url}" target="_blank" rel="noopener">${p.inst} — ${p.title}</a>
+         <span class="lj-meta">${p.type}${p.end ? ' · '+fmt(p.end) : ''}</span></li>`).join('') + `</ul></details>`;
+  })
+  .catch(()=>{});
 
 loadState();
 initGoalSelect();

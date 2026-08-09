@@ -1372,7 +1372,14 @@ function renderExam(){
   if(!calMonth) calMonth = new Date(today.getFullYear(), today.getMonth(), 1);
   const gs = myExamGroups();
   const useMine = examMine && gs.size > 0;
+  const seen = new Set();
   const evs = examData.events
+    .filter(e => {
+      const k = e.title + '|' + e.kind + '|' + e.start + '|' + e.end;
+      if(seen.has(k)) return false;
+      seen.add(k);
+      return true;
+    })
     .map(e => ({...e, sD: pdE(e.start), eD: pdE(e.end)}))
     .filter(e => !useMine || evMatches(e, gs));
   const note = (examMine && gs.size === 0)

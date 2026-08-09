@@ -19,9 +19,12 @@ def _ipv4_only(host, port, family=0, *args, **kwargs):
     return _orig_getaddrinfo(host, port, socket.AF_INET, *args, **kwargs)
 socket.getaddrinfo = _ipv4_only
 
-KEY = os.environ.get("DATA_GO_KR_API_KEY")
+KEY = os.environ.get("DATA_GO_KR_API_KEY", "").strip()
 if not KEY:
     sys.exit("DATA_GO_KR_API_KEY 환경변수가 없습니다.")
+# Encoding 키(%가 포함된 값)를 등록한 경우 디코딩해서 이중 인코딩 방지
+if "%" in KEY:
+    KEY = urllib.parse.unquote(KEY)
 
 BASE = "https://apis.data.go.kr/1051000/recruitment/list"
 
@@ -42,6 +45,15 @@ for attempt in range(1, 6):
         with urllib.request.urlopen(req, timeout=40) as r:
             body = r.read().decode("utf-8")
         break
+    except urllib.error.HTTPError as e:
+        last_err = e
+        detail = ""
+        try:
+            detail = e.read().decode("utf-8")[:300]
+        except Exception:
+            pass
+        print(f"시도 {attempt}/5 실패: {e} — {detail}", flush=True)
+        time.sleep(15)
     except Exception as e:
         last_err = e
         print(f"시도 {attempt}/5 실패: {e}", flush=True)

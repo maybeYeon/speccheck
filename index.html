@@ -248,7 +248,7 @@ footer{
 /* ── 시안 A: 헤더 · 탭 · 푸터 구조 ── */
 .site-head{position:sticky; top:0; z-index:50; background:var(--card); border-bottom:1px solid var(--line)}
 .site-head .hd{max-width:1180px; margin:0 auto; padding:10px 20px; display:flex; align-items:center; gap:14px}
-.site-head h1{margin:0; display:flex}
+.site-head h1{margin:0; display:flex; cursor:pointer}
 .site-head svg.logo{height:26px; width:auto; display:block}
 .site-tabs{display:flex; gap:2px; margin-left:6px}
 .tab-btn{border:none; background:none; padding:8px 13px; border-radius:8px; font-size:14px; font-weight:700; color:var(--sub)}
@@ -296,6 +296,19 @@ main.wrap{display:block; padding-top:22px}
 .live-jobs a{color:var(--accent-ink); text-decoration:none; font-weight:700}
 .live-jobs a:hover{text-decoration:underline}
 .live-jobs .lj-meta{color:var(--sub); font-size:11.5px; white-space:nowrap}
+.lj-toggle{border:1px solid var(--line); background:var(--chip); border-radius:20px; padding:2px 10px; font-size:11.5px; color:var(--sub)}
+.lj-toggle:hover{border-color:var(--accent); color:var(--accent-ink)}
+/* 시험일정 타임라인 */
+.tl-updated{color:var(--sub); font-size:12px; margin:0 0 14px}
+.tl-month{font-size:14.5px; font-weight:700; margin:20px 0 10px}
+.tl{border-left:2px solid var(--line); margin:4px 0 8px 7px; padding-left:18px}
+.tl-item{position:relative; margin-bottom:11px; font-size:13.5px; display:flex; flex-wrap:wrap; gap:6px; align-items:baseline}
+.tl-item::before{content:""; position:absolute; left:-23.5px; top:5px; width:9px; height:9px; border-radius:50%; background:var(--sub)}
+.tl-item.reg::before{background:var(--accent)}
+.tl-item.exam::before{background:var(--plan)}
+.tl-item .tl-date{color:var(--sub); font-variant-numeric:tabular-nums}
+.tl-legend{display:flex; gap:14px; font-size:12px; color:var(--sub); margin:0 0 4px}
+.tl-legend i{display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:5px}
 footer{max-width:1180px; margin:36px auto 24px; padding:18px 20px 0}
 .bottom-nav{display:none}
 @media (max-width:900px){
@@ -413,8 +426,9 @@ footer{max-width:1180px; margin:36px auto 24px; padding:18px 20px 0}
 
   <!-- ══ 탭 4: 시험 일정 ══ -->
   <section class="tabpane" id="pane-schedule">
-    <h2 class="pane-title">시험 일정 바로가기</h2>
-    <p class="intro">정확한 접수·시험일은 매년 바뀌므로 주관처 공식 일정 페이지로 연결합니다. 회차는 통상 기준입니다.</p>
+    <h2 class="pane-title">시험 일정</h2>
+    <div id="examTimeline"><p class="intro">국가기술자격 시험일정을 불러오는 중입니다… (데이터 수집 전이면 아래 주관처 링크를 이용하세요)</p></div>
+    <details class="live-jobs" style="margin-top:20px"><summary>주관처별 공식 일정 링크 모음 (어학·민간 포함 30곳)</summary>
     <div class="sched-wrap"><table class="sched">
       <tr><th>주관처 · 시험</th><th>대상 자격</th><th>연간 회차 (통상)</th><th>공식 일정</th></tr>
       <tr><td>한국산업인력공단 (국가기술자격)</td><td>기사 · 산업기사 · 기능사 전 종목</td><td>기사·산업기사 연 3회 / 기능사 연 4회</td><td><a href="https://www.q-net.or.kr" target="_blank" rel="noopener">q-net.or.kr</a></td></tr>
@@ -447,7 +461,7 @@ footer{max-width:1180px; margin:36px auto 24px; padding:18px 20px 0}
       <tr><td>한국관세물류협회</td><td>보세사</td><td>연 1회</td><td><a href="https://www.kcla.kr" target="_blank" rel="noopener">kcla.kr</a></td></tr>
       <tr><td>한국정보평가협회</td><td>CS리더스관리사</td><td>매월</td><td><a href="https://www.kie.or.kr" target="_blank" rel="noopener">kie.or.kr</a></td></tr>
       <tr><td>AWS</td><td>AWS 공인 자격</td><td>상시 (테스트센터·온라인)</td><td><a href="https://aws.amazon.com/ko/certification/" target="_blank" rel="noopener">aws.amazon.com</a></td></tr>
-    </table></div>
+    </table></div></details>
   </section>
 </main>
 
@@ -815,6 +829,7 @@ function refreshAll(){
   renderResults();
   renderGoal();
   renderExplore();
+  renderLiveJobs();
 }
 
 function renderLangs(){
@@ -1177,19 +1192,96 @@ function switchTab(name){
 }
 document.querySelectorAll('.tab-btn').forEach(b => b.addEventListener('click', () => switchTab(b.dataset.tab)));
 document.getElementById('lsGo').addEventListener('click', () => switchTab('results'));
+// 로고 클릭 → 홈(스펙 입력)
+document.querySelector('.site-head h1').addEventListener('click', () => switchTab('input'));
 
-/* ───────── 공공기관 채용공고 자동 수집분 표시 (GitHub Pages에서만 동작) ───────── */
+/* ───────── 공공기관 채용공고: 내 스펙 분야(NCS) 매칭 우선 표시 ───────── */
+let liveJobsData = null;
+let liveShowAll = false;
+const CAT_TO_NCS = {
+  it:['정보통신'],
+  design:['디자인','문화'],
+  fin:['금융','보험','회계'],
+  biz:['경영','회계','사무','영업','운전'],
+  exam:['경영','회계','사무'],
+  safe:['건설','환경','에너지','안전','전기'],
+  mfg:['기계','재료','전기','전자','화학','식품'],
+  svc:['보건','의료','사회복지','음식','이용','숙박','여행'],
+};
+function renderLiveJobs(){
+  const box = document.getElementById('liveJobs');
+  if(!box || !liveJobsData) return;
+  const d = liveJobsData;
+  const cats = new Set(Object.keys(certState).map(id => CERT_MAP[id] && CERT_MAP[id].cat).filter(Boolean));
+  const kws = [];
+  cats.forEach(c => (CAT_TO_NCS[c]||[]).forEach(k => kws.push(k)));
+  const matched = kws.length ? d.postings.filter(p => kws.some(k => (p.ncs||'').includes(k))) : [];
+  const useMatched = kws.length>0 && matched.length>0 && !liveShowAll;
+  const list = useMatched ? matched : d.postings;
+  const label = kws.length===0
+    ? `전체 ${d.count}건`
+    : matched.length===0
+      ? `내 스펙 분야 0건 — 전체 표시`
+      : useMatched ? `내 스펙 분야 ${matched.length}건 / 전체 ${d.count}건` : `전체 ${d.count}건 (관련 ${matched.length}건)`;
+  const toggle = (kws.length>0 && matched.length>0)
+    ? `<button class="lj-toggle" id="ljToggle" type="button">${liveShowAll ? '내 분야만 보기' : '전체 보기'}</button>` : '';
+  const fmt = s => s && s.length===8 ? `~${s.slice(4,6)}.${s.slice(6,8)} 마감` : '';
+  box.innerHTML = `<details class="live-jobs" open>
+    <summary>📢 접수 중인 공공기관 공고 <span class="tag rec">${label}</span> ${toggle}
+      <span class="lj-meta">${d.updated} 자동 수집</span></summary>
+    <ul>` + list.slice(0,12).map(p =>
+      `<li><a href="${p.url}" target="_blank" rel="noopener">${p.inst} — ${p.title}</a>
+       <span class="lj-meta">${p.type}${p.end ? ' · '+fmt(p.end) : ''}${p.ncs ? ' · '+p.ncs.split(',')[0] : ''}</span></li>`).join('') + `</ul></details>`;
+  const tg = document.getElementById('ljToggle');
+  if(tg) tg.addEventListener('click', e => {
+    e.preventDefault(); e.stopPropagation();
+    liveShowAll = !liveShowAll;
+    renderLiveJobs();
+  });
+}
 fetch('jobs-live.json?t=' + Date.now())
   .then(r => r.ok ? r.json() : null)
+  .then(d => { if(d && d.postings && d.postings.length){ liveJobsData = d; renderLiveJobs(); } })
+  .catch(()=>{});
+
+/* ───────── 시험일정 타임라인 ───────── */
+fetch('exam-schedule.json?t=' + Date.now())
+  .then(r => r.ok ? r.json() : null)
   .then(d => {
-    if(!d || !d.postings || !d.postings.length) return;
-    const box = document.getElementById('liveJobs');
-    const fmt = s => s && s.length===8 ? `~${s.slice(4,6)}.${s.slice(6,8)} 마감` : '';
-    box.innerHTML = `<details class="live-jobs" open>
-      <summary>📢 지금 접수 중인 공공기관 공고 <span class="tag rec">${d.count}건 · ${d.updated} 자동 수집</span></summary>
-      <ul>` + d.postings.slice(0,12).map(p =>
-        `<li><a href="${p.url}" target="_blank" rel="noopener">${p.inst} — ${p.title}</a>
-         <span class="lj-meta">${p.type}${p.end ? ' · '+fmt(p.end) : ''}</span></li>`).join('') + `</ul></details>`;
+    const box = document.getElementById('examTimeline');
+    if(!box || !d || !d.events || !d.events.length) return;
+    const pd = s => new Date(+s.slice(0,4), +s.slice(4,6)-1, +s.slice(6,8));
+    const today = new Date(); today.setHours(0,0,0,0);
+    const horizon = new Date(today); horizon.setDate(horizon.getDate()+150);
+    const fmtD = s => `${s.slice(4,6)}.${s.slice(6,8)}`;
+    const evs = d.events
+      .map(e => ({...e, sD: pd(e.start), eD: pd(e.end)}))
+      .filter(e => e.eD >= today && e.sD <= horizon)
+      .sort((a,b) => a.sD - b.sD || a.eD - b.eD);
+    if(!evs.length){ box.innerHTML = '<p class="intro">150일 이내 예정된 일정이 없습니다.</p>'; return; }
+    let html = `<p class="tl-updated">${d.updated} 자동 수집 · 출처: 한국산업인력공단 (국가기술·전문자격 공통 일정 — 종목별 세부 일정은 Q-Net 확인)</p>
+      <div class="tl-legend"><span><i style="background:var(--accent)"></i>원서접수</span>
+      <span><i style="background:var(--plan)"></i>시험</span><span><i style="background:var(--sub)"></i>합격발표</span></div>`;
+    let curMonth = '';
+    let open = false;
+    evs.slice(0,60).forEach(e => {
+      const m = `${e.sD.getFullYear()}년 ${e.sD.getMonth()+1}월`;
+      if(m !== curMonth){
+        curMonth = m;
+        if(open) html += '</div>';
+        html += `<h3 class="tl-month">${m}</h3><div class="tl">`;
+        open = true;
+      }
+      const ongoing = e.sD <= today && today <= e.eD;
+      const dday = Math.ceil((e.sD - today) / 86400000);
+      const st = ongoing ? '<span class="tag now">진행중</span>' : `<span class="tag plan">D-${dday}</span>`;
+      const cls = e.kind.includes('접수') ? 'reg' : e.kind.includes('시험') ? 'exam' : '';
+      const dateTxt = e.start === e.end ? fmtD(e.start) : `${fmtD(e.start)} ~ ${fmtD(e.end)}`;
+      html += `<div class="tl-item ${cls}"><b>${e.title}</b> ${e.kind}
+        <span class="tl-date">${dateTxt}</span> ${st}</div>`;
+    });
+    if(open) html += '</div>';
+    box.innerHTML = html;
   })
   .catch(()=>{});
 

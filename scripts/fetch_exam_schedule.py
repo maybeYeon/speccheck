@@ -28,11 +28,11 @@ BASE = "apis.data.go.kr/B490007/qualExamSchd/getQualExamSchdList"
 YEAR = datetime.now(timezone(timedelta(hours=9))).year
 
 
-def fetch(qualgb, year):
+def fetch(qualgb, year, page=1):
     params = {
         "serviceKey": KEY,
-        "numOfRows": "200",
-        "pageNo": "1",
+        "numOfRows": "50",     # API 최대 50건/페이지
+        "pageNo": str(page),
         "dataFormat": "json",
         "implYy": str(year),
         "qualgbCd": qualgb,
@@ -104,11 +104,15 @@ def g(row, key):
 
 events = []
 for qualgb, gbname in [("T", "국가기술자격"), ("S", "국가전문자격")]:
+    rows = []
     try:
-        rows = parse_rows(fetch(qualgb, YEAR))
+        for page in range(1, 7):   # 최대 6페이지(300건)
+            batch = parse_rows(fetch(qualgb, YEAR, page))
+            rows.extend(batch)
+            if len(batch) < 50:
+                break
     except Exception as e:
-        print(f"[{qualgb}] 수집 실패, 건너뜀: {e}", flush=True)
-        continue
+        print(f"[{qualgb}] 수집 실패, 지금까지 {len(rows)}건으로 진행: {e}", flush=True)
     print(f"[{qualgb}] {len(rows)}건", flush=True)
     for row in rows:
         desc = g(row, "description") or f"{g(row,'implYy')}년 {g(row,'qualgbNm')} 제{g(row,'implSeq')}회"

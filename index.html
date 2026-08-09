@@ -61,7 +61,7 @@ header.top{display:flex; align-items:flex-end; justify-content:space-between; ga
 .brand h1{margin:0; font-size:clamp(24px,3.4vw,34px); font-weight:700; letter-spacing:-.01em; text-wrap:balance}
 .brand svg.logo{height:clamp(30px,4.2vw,42px); width:auto; display:block}
 .brand h1 .seal{color:var(--accent)}
-.brand p{margin:6px 0 0; color:var(--sub); font-size:14.5px; max-width:56ch}
+.brand p{margin:6px 0 0; color:var(--sub); font-size:14.5px}
 .reset-btn{background:none; border:1px solid var(--line); border-radius:8px; padding:7px 14px; font-size:13px; color:var(--sub)}
 .reset-btn:hover{border-color:var(--sub)}
 
@@ -94,12 +94,19 @@ header.top{display:flex; align-items:flex-end; justify-content:space-between; ga
   background:var(--paper); color:var(--ink); font-size:13.5px; font-family:inherit;
 }
 .filter-row input::placeholder{color:var(--sub)}
-.cats{padding:8px 18px 18px; display:flex; flex-direction:column; gap:16px}
-.cat h3{
-  margin:8px 0 8px; font-size:12px; font-weight:700; color:var(--sub);
-  letter-spacing:.08em; display:flex; justify-content:space-between;
+.cats{padding:12px 18px 18px; display:flex; flex-direction:column; gap:9px}
+.cat{border:1px solid var(--line); border-radius:10px; overflow:hidden; background:var(--card)}
+.cat-head{
+  width:100%; display:flex; justify-content:space-between; align-items:center;
+  padding:11px 14px; background:var(--chip); border:none;
+  font-size:13.5px; font-weight:700; text-align:left;
 }
-.cat h3 .cnt{color:var(--accent); font-variant-numeric:tabular-nums}
+.cat-head:hover{background:var(--accent-soft)}
+.cat-head .meta{display:flex; gap:10px; align-items:center; font-size:12px}
+.cat-head .cnt{color:var(--accent); font-variant-numeric:tabular-nums; font-weight:700}
+.cat-head .chev{color:var(--sub); transition:transform .15s; font-size:11px}
+.cat.open .cat-head .chev{transform:rotate(180deg)}
+.cat .chips{padding:12px 14px}
 .chips{display:flex; flex-wrap:wrap; gap:7px}
 .chip{
   border:1px solid var(--line); background:var(--chip); border-radius:20px;
@@ -547,6 +554,7 @@ function certMatches(c, f){
   if(c.name.toLowerCase().includes(f)) return true;
   return (c.alias||[]).some(a => a.toLowerCase().includes(f));
 }
+const openCats = new Set();   // 접기/펼치기 상태 (기본: 모두 접힘)
 function renderCerts(filter){
   const box = document.getElementById('certCats');
   box.innerHTML = '';
@@ -555,11 +563,22 @@ function renderCerts(filter){
     const items = CERTS.filter(c => c.cat===cat.id && certMatches(c, f));
     if(!items.length) return;
     const selCnt = CERTS.filter(c => c.cat===cat.id && certState[c.id]).length;
+    const open = f ? true : openCats.has(cat.id);   // 검색 중엔 자동 펼침
     const div = document.createElement('div');
-    div.className = 'cat';
-    const h = document.createElement('h3');
-    h.innerHTML = `<span>${cat.name}</span><span class="cnt">${selCnt ? selCnt+'개 선택' : ''}</span>`;
-    div.appendChild(h);
+    div.className = 'cat' + (open ? ' open' : '');
+    const head = document.createElement('button');
+    head.type = 'button';
+    head.className = 'cat-head';
+    head.setAttribute('aria-expanded', open ? 'true' : 'false');
+    head.innerHTML = `<span>${cat.name}</span>
+      <span class="meta"><span class="cnt">${selCnt ? selCnt+'개 선택' : ''}</span>
+      <span class="chev">${open ? '▲' : '▼'}</span></span>`;
+    head.addEventListener('click', () => {
+      if(openCats.has(cat.id)) openCats.delete(cat.id); else openCats.add(cat.id);
+      renderCerts(document.getElementById('certFilter').value);
+    });
+    div.appendChild(head);
+    if(!open){ box.appendChild(div); return; }
     const chips = document.createElement('div');
     chips.className = 'chips';
     items.forEach(c => {

@@ -313,6 +313,33 @@ main.wrap{display:block; padding-top:22px}
 .tl-item .tl-date{color:var(--sub); font-variant-numeric:tabular-nums}
 .tl-legend{display:flex; gap:14px; font-size:12px; color:var(--sub); margin:0 0 4px}
 .tl-legend i{display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:5px}
+/* 세그먼트 토글 */
+.seg-row{display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin:0 0 12px}
+.seg{display:inline-flex; border:1px solid var(--line); border-radius:9px; overflow:hidden; background:var(--card)}
+.seg button{border:none; background:none; padding:7px 14px; font-size:13px; font-weight:700; color:var(--sub)}
+.seg button.on{background:var(--accent); color:#fff}
+.seg button:not(.on):hover{background:var(--chip)}
+/* 캘린더 */
+.cal-nav{display:flex; align-items:center; gap:12px; margin:4px 0 10px}
+.cal-nav b{font-size:15px; min-width:110px; text-align:center; font-variant-numeric:tabular-nums}
+.cal{display:grid; grid-template-columns:repeat(7,1fr); gap:4px; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:10px}
+.cal-dow{text-align:center; font-size:11.5px; color:var(--sub); font-weight:700; padding:4px 0}
+.cal-cell{min-height:52px; border-radius:8px; padding:5px 6px; font-size:12px; display:flex; flex-direction:column; gap:3px; border:1px solid transparent}
+.cal-cell.empty{visibility:hidden}
+.cal-cell.has{background:var(--chip); cursor:pointer}
+.cal-cell.has:hover{border-color:var(--accent)}
+.cal-cell.today{border-color:var(--accent); background:var(--accent-soft)}
+.cal-cell.sel{outline:2px solid var(--accent)}
+.cal-cell .d{font-variant-numeric:tabular-nums; color:var(--sub)}
+.cal-cell.today .d{color:var(--accent-ink); font-weight:700}
+.cal-cell .dots{display:flex; gap:3px; align-items:center; flex-wrap:wrap}
+.cal-cell .dots i{width:7px; height:7px; border-radius:50%; background:var(--sub); display:inline-block}
+.cal-cell .dots i.reg{background:var(--accent)}
+.cal-cell .dots i.exam{background:var(--plan)}
+.cal-cell .dots em{font-style:normal; font-size:10px; color:var(--sub)}
+.cal-detail{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 16px; margin-top:10px; font-size:13px}
+.cal-detail ul{list-style:none; margin:8px 0 0; padding:0; display:flex; flex-direction:column; gap:8px}
+@media (max-width:560px){ .cal-cell{min-height:42px; padding:3px 4px} }
 footer{max-width:1180px; margin:36px auto 24px; padding:18px 20px 0}
 .bottom-nav{display:none}
 @media (max-width:900px){
@@ -837,6 +864,7 @@ function refreshAll(){
   renderGoal();
   renderExplore();
   renderLiveJobs();
+  renderExam();
 }
 
 function renderLangs(){
@@ -1251,45 +1279,144 @@ fetch('jobs-live.json?t=' + Date.now())
   .then(d => { if(d && d.postings && d.postings.length){ liveJobsData = d; renderLiveJobs(); } })
   .catch(()=>{});
 
-/* ───────── 시험일정 타임라인 ───────── */
+/* ───────── 시험일정: 캘린더/리스트 토글 + 내 스펙 필터 ───────── */
+let examData = null;
+let examView = 'cal';
+try{ examView = localStorage.getItem('speccheck_examview') || 'cal'; }catch(e){}
+let examMine = true;
+let calMonth = null;
+let calSelDay = null;
+
+const QNET_PRO = new Set(['mulryu','counsel2','sahoejosa2','welfare1','telemarketing']);
+function myExamGroups(){
+  const gs = new Set();
+  Object.keys(certState).forEach(id => {
+    const c = CERT_MAP[id]; if(!c) return;
+    if(c.name.includes('산업기사')) gs.add('산업기사');
+    else if(c.name.includes('기능사')) gs.add('기능사');
+    else if(c.name.includes('기사')) gs.add('기사');
+    if(QNET_PRO.has(id)) gs.add('전문자격');
+  });
+  return gs;
+}
+function evMatches(e, gs){
+  const t = (e.title||'') + (e.qual||'');
+  if(gs.has('산업기사') && t.includes('산업기사')) return true;
+  if(gs.has('기사') && t.replace(/산업기사/g,'').includes('기사')) return true;
+  if(gs.has('기능사') && t.includes('기능사')) return true;
+  if(gs.has('전문자격') && t.includes('전문자격')) return true;
+  return false;
+}
+const pdE = s => new Date(+s.slice(0,4), +s.slice(4,6)-1, +s.slice(6,8));
+const fmtE = s => `${s.slice(4,6)}.${s.slice(6,8)}`;
+function kindCls(k){ return k.includes('접수') ? 'reg' : k.includes('시험') ? 'exam' : 'pass'; }
+
+function examListHTML(evs, today){
+  const horizon = new Date(today); horizon.setDate(horizon.getDate()+150);
+  const list = evs.filter(e => e.eD >= today && e.sD <= horizon).sort((a,b) => a.sD - b.sD || a.eD - b.eD);
+  if(!list.length) return '<p class="intro">150일 이내 일정이 없습니다.</p>';
+  let html = '', curMonth = '', open = false;
+  list.slice(0,60).forEach(e => {
+    const m = `${e.sD.getFullYear()}년 ${e.sD.getMonth()+1}월`;
+    if(m !== curMonth){
+      curMonth = m;
+      if(open) html += '</div>';
+      html += `<h3 class="tl-month">${m}</h3><div class="tl">`;
+      open = true;
+    }
+    const ongoing = e.sD <= today && today <= e.eD;
+    const dday = Math.ceil((e.sD - today) / 86400000);
+    const st = ongoing ? '<span class="tag now">진행중</span>' : `<span class="tag plan">D-${dday}</span>`;
+    const cls = kindCls(e.kind);
+    const dateTxt = e.start === e.end ? fmtE(e.start) : `${fmtE(e.start)} ~ ${fmtE(e.end)}`;
+    html += `<div class="tl-item ${cls==='pass'?'':cls}"><b>${e.title}</b> ${e.kind}
+      <span class="tl-date">${dateTxt}</span> ${st}</div>`;
+  });
+  if(open) html += '</div>';
+  return html;
+}
+
+function examCalHTML(evs, today){
+  const y = calMonth.getFullYear(), m = calMonth.getMonth();
+  const startDow = new Date(y, m, 1).getDay();
+  const dim = new Date(y, m+1, 0).getDate();
+  let cells = ['일','월','화','수','목','금','토'].map(d => `<div class="cal-dow">${d}</div>`).join('');
+  for(let i=0; i<startDow; i++) cells += '<div class="cal-cell empty"></div>';
+  for(let d=1; d<=dim; d++){
+    const D = new Date(y, m, d);
+    const des = evs.filter(e => e.sD <= D && D <= e.eD);
+    const key = `${y}${String(m+1).padStart(2,'0')}${String(d).padStart(2,'0')}`;
+    const dots = des.slice(0,3).map(e => `<i class="${kindCls(e.kind)==='pass'?'':kindCls(e.kind)}"></i>`).join('')
+      + (des.length>3 ? `<em>+${des.length-3}</em>` : '');
+    cells += `<div class="cal-cell${des.length?' has':''}${D.getTime()===today.getTime()?' today':''}${calSelDay===key?' sel':''}" data-d="${key}">
+      <span class="d">${d}</span><span class="dots">${dots}</span></div>`;
+  }
+  let html = `<div class="cal-nav">
+      <button id="calPrev" type="button" class="reset-btn" aria-label="이전 달">‹</button>
+      <b>${y}년 ${m+1}월</b>
+      <button id="calNext" type="button" class="reset-btn" aria-label="다음 달">›</button>
+    </div><div class="cal">${cells}</div>`;
+  if(calSelDay){
+    const D = pdE(calSelDay);
+    const des = evs.filter(e => e.sD <= D && D <= e.eD).sort((a,b) => a.sD - b.sD);
+    html += `<div class="cal-detail"><b>${D.getMonth()+1}월 ${D.getDate()}일 일정</b>` +
+      (des.length ? '<ul>' + des.map(e => {
+        const cls = kindCls(e.kind);
+        const dateTxt = e.start === e.end ? fmtE(e.start) : `${fmtE(e.start)} ~ ${fmtE(e.end)}`;
+        return `<li class="tl-item ${cls==='pass'?'':cls}" style="margin:0"><b>${e.title}</b> ${e.kind}
+          <span class="tl-date">${dateTxt}</span></li>`;
+      }).join('') + '</ul>' : '<p class="intro" style="margin:6px 0 0">일정 없음</p>') + '</div>';
+  } else {
+    html += '<p class="tl-updated" style="margin-top:8px">점이 있는 날짜를 누르면 해당 일의 일정이 표시됩니다.</p>';
+  }
+  return html;
+}
+
+function renderExam(){
+  const box = document.getElementById('examTimeline');
+  if(!box || !examData) return;
+  const today = new Date(); today.setHours(0,0,0,0);
+  if(!calMonth) calMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+  const gs = myExamGroups();
+  const useMine = examMine && gs.size > 0;
+  const evs = examData.events
+    .map(e => ({...e, sD: pdE(e.start), eD: pdE(e.end)}))
+    .filter(e => !useMine || evMatches(e, gs));
+  const note = (examMine && gs.size === 0)
+    ? '<p class="tl-updated">선택한 자격증 중 산업인력공단 시행 종목(기사·산업기사·기능사 등)이 없어 전체 일정을 표시합니다.</p>' : '';
+  let html = `<div class="seg-row">
+    <div class="seg" role="group" aria-label="보기 방식">
+      <button type="button" class="${examView==='cal'?'on':''}" data-seg="view" data-val="cal">📅 캘린더</button>
+      <button type="button" class="${examView==='list'?'on':''}" data-seg="view" data-val="list">☰ 리스트</button>
+    </div>
+    <div class="seg" role="group" aria-label="일정 범위">
+      <button type="button" class="${examMine?'on':''}" data-seg="mine" data-val="1">내 스펙</button>
+      <button type="button" class="${!examMine?'on':''}" data-seg="mine" data-val="0">전체</button>
+    </div>
+    <a class="lj-toggle" href="https://www.q-net.or.kr" target="_blank" rel="noopener">Q-Net 원서접수 ↗</a>
+  </div>
+  <p class="tl-updated">${examData.updated} 자동 수집 · 산업인력공단 시행 국가기술·전문자격 회차 일정${useMine ? ` — 내 스펙 기준: ${[...gs].join(' · ')}` : ''} (컴활·세무회계·어학 등 타 기관 시험은 아래 링크 모음 참고)</p>${note}
+  <div class="tl-legend"><span><i style="background:var(--accent)"></i>원서접수</span>
+    <span><i style="background:var(--plan)"></i>시험</span><span><i style="background:var(--sub)"></i>합격발표</span></div>`;
+  html += examView === 'cal' ? examCalHTML(evs, today) : examListHTML(evs, today);
+  box.innerHTML = html;
+  box.querySelectorAll('[data-seg]').forEach(b => b.addEventListener('click', () => {
+    if(b.dataset.seg === 'view'){
+      examView = b.dataset.val;
+      try{ localStorage.setItem('speccheck_examview', examView); }catch(e){}
+    } else {
+      examMine = b.dataset.val === '1';
+    }
+    renderExam();
+  }));
+  const pv = document.getElementById('calPrev'), nx = document.getElementById('calNext');
+  if(pv) pv.addEventListener('click', () => { calMonth = new Date(calMonth.getFullYear(), calMonth.getMonth()-1, 1); calSelDay = null; renderExam(); });
+  if(nx) nx.addEventListener('click', () => { calMonth = new Date(calMonth.getFullYear(), calMonth.getMonth()+1, 1); calSelDay = null; renderExam(); });
+  box.querySelectorAll('.cal-cell.has').forEach(c => c.addEventListener('click', () => { calSelDay = c.dataset.d; renderExam(); }));
+}
 fetch('exam-schedule.json?t=' + Date.now())
   .then(r => r.ok ? r.json() : null)
-  .then(d => {
-    const box = document.getElementById('examTimeline');
-    if(!box || !d || !d.events || !d.events.length) return;
-    const pd = s => new Date(+s.slice(0,4), +s.slice(4,6)-1, +s.slice(6,8));
-    const today = new Date(); today.setHours(0,0,0,0);
-    const horizon = new Date(today); horizon.setDate(horizon.getDate()+150);
-    const fmtD = s => `${s.slice(4,6)}.${s.slice(6,8)}`;
-    const evs = d.events
-      .map(e => ({...e, sD: pd(e.start), eD: pd(e.end)}))
-      .filter(e => e.eD >= today && e.sD <= horizon)
-      .sort((a,b) => a.sD - b.sD || a.eD - b.eD);
-    if(!evs.length){ box.innerHTML = '<p class="intro">150일 이내 예정된 일정이 없습니다.</p>'; return; }
-    let html = `<p class="tl-updated">${d.updated} 자동 수집 · 출처: 한국산업인력공단 (국가기술·전문자격 공통 일정 — 종목별 세부 일정은 Q-Net 확인)</p>
-      <div class="tl-legend"><span><i style="background:var(--accent)"></i>원서접수</span>
-      <span><i style="background:var(--plan)"></i>시험</span><span><i style="background:var(--sub)"></i>합격발표</span></div>`;
-    let curMonth = '';
-    let open = false;
-    evs.slice(0,60).forEach(e => {
-      const m = `${e.sD.getFullYear()}년 ${e.sD.getMonth()+1}월`;
-      if(m !== curMonth){
-        curMonth = m;
-        if(open) html += '</div>';
-        html += `<h3 class="tl-month">${m}</h3><div class="tl">`;
-        open = true;
-      }
-      const ongoing = e.sD <= today && today <= e.eD;
-      const dday = Math.ceil((e.sD - today) / 86400000);
-      const st = ongoing ? '<span class="tag now">진행중</span>' : `<span class="tag plan">D-${dday}</span>`;
-      const cls = e.kind.includes('접수') ? 'reg' : e.kind.includes('시험') ? 'exam' : '';
-      const dateTxt = e.start === e.end ? fmtD(e.start) : `${fmtD(e.start)} ~ ${fmtD(e.end)}`;
-      html += `<div class="tl-item ${cls}"><b>${e.title}</b> ${e.kind}
-        <span class="tl-date">${dateTxt}</span> ${st}</div>`;
-    });
-    if(open) html += '</div>';
-    box.innerHTML = html;
-  })
+  .then(d => { if(d && d.events && d.events.length){ examData = d; renderExam(); } })
   .catch(()=>{});
 
 loadState();

@@ -26,8 +26,6 @@ if not KEY:
 if "%" in KEY:
     KEY = urllib.parse.unquote(KEY)
 
-BASE = "https://apis.data.go.kr/1051000/recruitment/list"
-
 params = {
     "serviceKey": KEY,
     "numOfRows": "150",
@@ -35,14 +33,18 @@ params = {
     "resultType": "json",
     "ongoingYn": "Y",          # 접수 진행 중인 공고만
 }
-url = BASE + "?" + urllib.parse.urlencode(params)
+query = urllib.parse.urlencode(params)
 
-req = urllib.request.Request(url, headers={"User-Agent": "speccheck-bot"})
+# 해외 러너에서 접속이 불안정하므로 http/https를 번갈아 총 12회 재시도
 body = None
 last_err = None
-for attempt in range(1, 6):
+TRIES = 12
+for attempt in range(1, TRIES + 1):
+    scheme = "https" if attempt % 2 == 1 else "http"
+    url = f"{scheme}://apis.data.go.kr/1051000/recruitment/list?{query}"
+    req = urllib.request.Request(url, headers={"User-Agent": "speccheck-bot"})
     try:
-        with urllib.request.urlopen(req, timeout=40) as r:
+        with urllib.request.urlopen(req, timeout=25) as r:
             body = r.read().decode("utf-8")
         break
     except urllib.error.HTTPError as e:
@@ -52,14 +54,14 @@ for attempt in range(1, 6):
             detail = e.read().decode("utf-8")[:300]
         except Exception:
             pass
-        print(f"시도 {attempt}/5 실패: {e} — {detail}", flush=True)
-        time.sleep(15)
+        print(f"시도 {attempt}/{TRIES} 실패 ({scheme}): {e} — {detail}", flush=True)
+        time.sleep(10)
     except Exception as e:
         last_err = e
-        print(f"시도 {attempt}/5 실패: {e}", flush=True)
-        time.sleep(15)
+        print(f"시도 {attempt}/{TRIES} 실패 ({scheme}): {e}", flush=True)
+        time.sleep(10)
 if body is None:
-    sys.exit(f"5회 재시도 모두 실패: {last_err}")
+    sys.exit(f"{TRIES}회 재시도 모두 실패: {last_err}")
 
 try:
     data = json.loads(body)

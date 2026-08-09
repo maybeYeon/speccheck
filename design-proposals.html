@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>스펙체크 리디자인 시안 A · B · C</title>
+<style>
+:root{
+  --paper:#F3F8FC; --card:#fff; --ink:#17324A; --sub:#5B7286; --line:#D9E6F0;
+  --accent:#1D7DD1; --accent-soft:#E1F0FB; --plan:#A3722A;
+  --dark:#0E1822; --dark-card:#16222E; --dark-line:#263849; --dark-ink:#E2ECF5;
+}
+*{box-sizing:border-box}
+body{margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Apple SD Gothic Neo","Pretendard","Noto Sans KR",system-ui,sans-serif; line-height:1.6}
+.wrap{max-width:980px; margin:0 auto; padding:36px 20px 80px}
+h1{font-size:26px; margin:0 0 6px}
+.lead{color:var(--sub); font-size:14.5px; margin:0 0 34px}
+.proposal{background:var(--card); border:1px solid var(--line); border-radius:16px;
+  padding:26px 28px; margin-bottom:30px; box-shadow:0 2px 10px rgba(23,50,74,.06)}
+.proposal h2{margin:0 0 4px; font-size:20px; display:flex; align-items:center; gap:10px}
+.badge{font-size:12px; font-weight:700; color:#fff; background:var(--accent); border-radius:20px; padding:2px 12px}
+.tagline{color:var(--sub); font-size:13.5px; margin:0 0 18px}
+.mock{border:1px solid var(--line); border-radius:12px; overflow:hidden; margin-bottom:18px; font-size:9px}
+table.pros{width:100%; border-collapse:collapse; font-size:13px}
+table.pros td{padding:6px 8px; vertical-align:top; border-top:1px solid var(--line)}
+table.pros td:first-child{width:84px; font-weight:700; color:var(--sub); white-space:nowrap}
+.pick{margin-top:14px; font-size:13px; background:var(--accent-soft); color:var(--ink);
+  border-radius:8px; padding:9px 14px}
+.pick b{color:var(--accent)}
+
+/* ── 시안 A 목업: 클린 포털 (탭 상단) ── */
+.a-head{background:#fff; border-bottom:1px solid var(--line); padding:10px 14px; display:flex; align-items:center; gap:14px}
+.a-logo{width:14px; height:14px; border:2.5px solid var(--accent); border-radius:4px; transform:rotate(-7deg)}
+.a-name{font-weight:800; font-size:11px}
+.a-tabs{display:flex; gap:2px; margin-left:14px}
+.a-tab{padding:5px 12px; border-radius:7px 7px 0 0; color:var(--sub)}
+.a-tab.on{background:var(--accent-soft); color:var(--accent); font-weight:700; border-bottom:2px solid var(--accent)}
+.a-body{background:var(--paper); padding:14px; display:grid; grid-template-columns:1fr 1.6fr; gap:10px; min-height:150px}
+.a-panel{background:#fff; border:1px solid var(--line); border-radius:8px; padding:10px}
+.a-chip{display:inline-block; background:var(--accent-soft); color:var(--accent); border-radius:10px; padding:2px 8px; margin:2px 1px}
+.a-chip.off{background:#EFF4F8; color:var(--sub)}
+.a-card{background:#fff; border:1px solid var(--line); border-radius:8px; padding:9px; margin-bottom:8px}
+.a-bar{height:4px; background:#E4EEF6; border-radius:3px; margin-top:6px; position:relative}
+.a-bar i{position:absolute; left:30%; width:35%; top:0; bottom:0; background:var(--accent); border-radius:3px}
+.a-foot{background:#fff; border-top:1px solid var(--line); padding:8px 14px; color:var(--sub)}
+
+/* ── 시안 B 목업: 증명서·성적표 ── */
+.b-head{background:#FBF9F4; border-bottom:2px solid #2C3B4E; padding:12px 16px; display:flex; justify-content:space-between; align-items:center}
+.b-title{font-family:"Apple Myungjo","Nanum Myeongjo",serif; font-weight:800; font-size:12px; letter-spacing:.2em}
+.b-no{color:#8B8577; font-size:8px}
+.b-body{background:#FBF9F4; padding:16px; min-height:150px}
+.b-doc{background:#fff; border:1px solid #DDD5C4; padding:12px 14px; box-shadow:0 1px 4px rgba(60,50,30,.08); position:relative}
+.b-doc::after{content:"합격"; position:absolute; right:12px; top:10px; color:#C4472F; border:2px solid #C4472F;
+  border-radius:4px; padding:2px 6px; font-weight:800; transform:rotate(8deg); font-family:serif}
+.b-row{display:flex; justify-content:space-between; border-bottom:1px dashed #E3DCCB; padding:5px 2px}
+.b-row b{font-weight:700}
+.b-foot{background:#F3EFE5; border-top:1px solid #DDD5C4; text-align:center; padding:8px; color:#8B8577}
+
+/* ── 시안 C 목업: 프로 대시보드 ── */
+.c-shell{display:grid; grid-template-columns:64px 1fr; background:var(--dark); color:var(--dark-ink); min-height:190px}
+.c-side{background:#0A1219; border-right:1px solid var(--dark-line); padding:10px 6px; display:flex; flex-direction:column; gap:8px; align-items:center}
+.c-ico{width:26px; height:26px; border-radius:7px; background:var(--dark-card); border:1px solid var(--dark-line)}
+.c-ico.on{background:#1D7DD1}
+.c-main{padding:12px}
+.c-kpis{display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-bottom:10px}
+.c-kpi{background:var(--dark-card); border:1px solid var(--dark-line); border-radius:8px; padding:8px}
+.c-kpi b{font-size:13px; color:#5AABEB; display:block}
+.c-table{background:var(--dark-card); border:1px solid var(--dark-line); border-radius:8px; padding:8px}
+.c-tr{display:flex; justify-content:space-between; padding:4px 2px; border-bottom:1px solid var(--dark-line); color:#8FA6B8}
+.c-tr b{color:var(--dark-ink)}
+.c-tag{color:#5AABEB; font-weight:700}
+footer{color:var(--sub); font-size:12.5px; text-align:center; margin-top:20px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>스펙체크 리디자인 시안</h1>
+  <p class="lead">exam.martius.kr처럼 헤더 / 바디 / 푸터를 분리하고 탭으로 기능을 나누는 전면 개편안 3가지입니다.
+  마음에 드는 시안(A/B/C)을 알려주시면 그 방향으로 전체를 개발합니다. 일부만 섞는 것(예: A 구조 + B의 도장 감성)도 가능합니다.</p>
+
+  <!-- ═══ 시안 A ═══ -->
+  <div class="proposal">
+    <h2><span class="badge">시안 A</span> 클린 포털 — 상단 탭 내비게이션</h2>
+    <p class="tagline">지금의 하늘색·현대하모니 아이덴티티를 유지하면서, 시험 포털처럼 탭으로 기능을 분리한 안정적인 개편.</p>
+    <div class="mock">
+      <div class="a-head">
+        <div class="a-logo"></div><span class="a-name">스펙체크</span>
+        <div class="a-tabs">
+          <span class="a-tab on">스펙 입력</span><span class="a-tab">매칭 결과</span>
+          <span class="a-tab">직무 탐색</span><span class="a-tab">시험 일정</span>
+        </div>
+      </div>
+      <div class="a-body">
+        <div class="a-panel">
+          <b>자격증 선택</b><br>
+          <span class="a-chip">정보처리기사 ✓</span><span class="a-chip off">SQLD</span><span class="a-chip off">한능검</span><br>
+          <span class="a-chip off">전기기사</span><span class="a-chip">산업안전기사 ✓</span>
+        </div>
+        <div>
+          <div class="a-card"><b>안전관리자</b> — 건설현장 · 제조공장<div class="a-bar"><i></i></div></div>
+          <div class="a-card"><b>웹 · 응용 SW 개발자</b> — IT서비스 · SI<div class="a-bar"><i></i></div></div>
+        </div>
+      </div>
+      <div class="a-foot">데이터 출처 · 이용 안내 · 문의</div>
+    </div>
+    <table class="pros">
+      <tr><td>탭 구성</td><td>① 스펙 입력 ② 매칭 결과 ③ 직무 탐색(역확인 확장) ④ 시험 일정(자격증별 접수·시험일 정리 — 신규)</td></tr>
+      <tr><td>장점</td><td>현행 디자인 자산 그대로 계승 → 개발 리스크 최소. 모바일에서는 탭이 하단 내비게이션으로 변환되어 앱처럼 사용.</td></tr>
+      <tr><td>단점</td><td>시각적 변화 폭이 가장 작음.</td></tr>
+    </table>
+    <div class="pick"><b>이런 분께</b> — 지금 느낌이 마음에 들고, 구조만 전문적으로 정리하고 싶다.</div>
+  </div>
+
+  <!-- ═══ 시안 B ═══ -->
+  <div class="proposal">
+    <h2><span class="badge" style="background:#C4472F">시안 B</span> 증명서 · 성적표 — 문서 콘셉트</h2>
+    <p class="tagline">결과 화면을 '합격 통지서/성적표'처럼 문서 형태로 발급하는 컨셉. 도장 모티프를 전면에 내세워 기억에 남는 차별화.</p>
+    <div class="mock">
+      <div class="b-head"><span class="b-title">스펙체크 · 직무적합 확인서</span><span class="b-no">제 2026-08호</span></div>
+      <div class="b-body">
+        <div class="b-doc">
+          <div class="b-row"><span>성명 스펙</span><b>정보처리기사 · 산업안전기사 · TOEIC 800</b></div>
+          <div class="b-row"><span>적합 직무</span><b>안전관리자 외 4건</b></div>
+          <div class="b-row"><span>초봉 참고</span><b>3,400 ~ 4,600만원</b></div>
+        </div>
+      </div>
+      <div class="b-foot">본 확인서는 참고용이며 법적 효력이 없습니다</div>
+    </div>
+    <table class="pros">
+      <tr><td>탭 구성</td><td>① 스펙 기입(원서 접수 느낌) ② 확인서 발급(결과) ③ 직무 열람 ④ 발급 이력</td></tr>
+      <tr><td>장점</td><td>공유 이미지가 '문서'라서 SNS에서 눈에 띔 — "내 확인서 발급받기" 같은 바이럴 요소로 확장 가능. 세리프+도장의 독자적 감성.</td></tr>
+      <tr><td>단점</td><td>표 중심이라 카드 UI보다 정보 탐색이 느릴 수 있음. 전면 재개발 필요.</td></tr>
+    </table>
+    <div class="pick"><b>이런 분께</b> — 남들과 완전히 다른, 공유 욕구를 자극하는 컨셉을 원한다.</div>
+  </div>
+
+  <!-- ═══ 시안 C ═══ -->
+  <div class="proposal">
+    <h2><span class="badge" style="background:#16222E">시안 C</span> 프로 대시보드 — 사이드바 · 데이터 중심</h2>
+    <p class="tagline">좌측 사이드바 내비게이션 + 지표(KPI) 중심의 관리자툴 스타일. 다크 기본. 가장 '전문 서비스' 느낌.</p>
+    <div class="mock">
+      <div class="c-shell">
+        <div class="c-side"><div class="c-ico on"></div><div class="c-ico"></div><div class="c-ico"></div><div class="c-ico"></div></div>
+        <div class="c-main">
+          <div class="c-kpis">
+            <div class="c-kpi"><b>2</b>보유 자격</div><div class="c-kpi"><b>1</b>취득 예정</div>
+            <div class="c-kpi"><b>5</b>매칭 직무</div><div class="c-kpi"><b>3,400+</b>초봉 참고</div>
+          </div>
+          <div class="c-table">
+            <div class="c-tr"><b>안전관리자</b><span>3,400~4,600 <span class="c-tag">지원가능</span></span></div>
+            <div class="c-tr"><b>SW 개발자</b><span>3,200~4,200 <span class="c-tag">지원가능</span></span></div>
+            <div class="c-tr"><b>DB 엔지니어</b><span>3,300~4,300 <span style="color:#D3A052">취득 시</span></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <table class="pros">
+      <tr><td>탭 구성</td><td>사이드바: ① 대시보드 ② 스펙 관리 ③ 직무 탐색 ④ 공고 바로가기 ⑤ 설정(테마 등)</td></tr>
+      <tr><td>장점</td><td>정보 밀도가 높고 표·지표 중심이라 스펙 여러 개를 관리하는 헤비 유저에게 최적. 확장(공고 수집, 일정 알림)에 유리한 구조.</td></tr>
+      <tr><td>단점</td><td>첫 방문자에게 다소 무거워 보일 수 있음. 모바일에서 사이드바 → 하단바 변환 필요.</td></tr>
+    </table>
+    <div class="pick"><b>이런 분께</b> — 취준 도구를 넘어 '커리어 관리 서비스'로 키우고 싶다.</div>
+  </div>
+
+  <footer>답장으로 A / B / C (또는 조합)를 알려주시면 해당 방향으로 전면 개발에 들어갑니다.</footer>
+</div>
+</body>
+</html>

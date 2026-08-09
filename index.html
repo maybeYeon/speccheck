@@ -330,6 +330,7 @@ const CATS = [
   {id:'design', name:'디자인 · 콘텐츠'},
   {id:'fin', name:'회계 · 금융'},
   {id:'biz', name:'사무 · 경영 · 유통'},
+  {id:'exam', name:'검정 · 시험'},
   {id:'safe', name:'건설 · 안전 · 환경'},
   {id:'mfg', name:'기계 · 제조'},
   {id:'svc', name:'서비스 · 보건 · 복지'},
@@ -376,6 +377,14 @@ const CERTS = [
   {id:'gukje_muyeok', cat:'biz', name:'국제무역사'},
   {id:'muyeok_yeongeo1', cat:'biz', name:'무역영어 1급'},
   {id:'sahoejosa2', cat:'biz', name:'사회조사분석사 2급'},
+  // 검정·시험
+  {id:'hanneung1', cat:'exam', name:'한국사능력검정 심화 1급', alias:['한능검','한국사'], note:'공기업·공공기관 채용 시 요구·가산되는 대표 검정'},
+  {id:'hanneung2', cat:'exam', name:'한국사능력검정 심화 2급', alias:['한능검','한국사']},
+  {id:'kbs_korean', cat:'exam', name:'KBS한국어능력시험', alias:['한국어능력']},
+  {id:'tokl', cat:'exam', name:'국어능력인증시험(ToKL)', alias:['토클']},
+  {id:'hanja2', cat:'exam', name:'한자능력검정 2급', alias:['한자']},
+  {id:'tesat', cat:'exam', name:'TESAT', alias:['테셋','경제이해력검증시험']},
+  {id:'maekyung', cat:'exam', name:'매경TEST', alias:['매경테스트']},
   // 건설·안전·환경
   {id:'geonchuk_gisa', cat:'safe', name:'건축기사'},
   {id:'geonchuk_sanup', cat:'safe', name:'건축산업기사'},
@@ -481,6 +490,10 @@ const JOBS = [
   {id:'logistics', g:'사무 · 경영 · 유통', title:'물류관리 담당', inds:'물류 · 유통 · 제조', sal:[3000,3800], certs:['mulryu']},
   {id:'trade', g:'사무 · 경영 · 유통', title:'무역사무 · 수출입 관리', inds:'무역상사 · 포워딩 · 제조 수출팀', sal:[3000,4000], certs:['gukje_muyeok','muyeok_yeongeo1']},
   {id:'research', g:'사무 · 경영 · 유통', title:'리서치 · 조사분석', inds:'리서치사 · 마케팅 · 공공기관', sal:[2900,3600], certs:['sahoejosa2']},
+
+  {id:'public_office', g:'공공 · 언론 · 경제', title:'공공기관 · 공기업 사무직', inds:'공기업 · 공공기관 · 출자출연기관', sal:[3000,4200], certs:['hanneung1','hanneung2','comhwal1']},
+  {id:'media', g:'공공 · 언론 · 경제', title:'언론 · 콘텐츠 에디터', inds:'언론사 · 방송 · 출판 · 콘텐츠', sal:[2900,3800], certs:['kbs_korean','tokl','hanja2']},
+  {id:'econ_office', g:'공공 · 언론 · 경제', title:'경제 · 금융권 사무 지원', inds:'은행·증권 지원부서 · 경제단체', sal:[2900,3800], certs:['tesat','maekyung']},
 
   {id:'global_sales', g:'어학 기반', title:'해외영업', inds:'제조 수출 · 상사 · IT 해외사업', sal:[3200,4200], lang:[{k:'toeic',min:800},{k:'opic',min:2},{k:'toeicspk',min:2}]},
   {id:'global_cs', g:'어학 기반', title:'글로벌 CS · 통번역 지원', inds:'게임 · 이커머스 · 항공·관광', sal:[2900,3800], lang:[{k:'toeic',min:900},{k:'jlpt',min:3},{k:'hsk',min:3},{k:'opic',min:3}]},

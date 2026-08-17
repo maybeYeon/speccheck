@@ -1,5 +1,5 @@
 {
- "updated": "2026-08-16 06:17 KST",
+ "updated": "2026-08-18 06:22 KST",
  "source": "공공데이터포털 공공기관 채용정보 (재정경제부)",
  "count": 150,
  "postings": [
@@ -220,15 +220,6 @@
    "url": "https://www.comwel.or.kr/recruit/hp/main.do"
   },
   {
-   "inst": "근로복지공단",
-   "title": "[동해병원] 공무직(방사선사) 채용 공고",
-   "region": "강원",
-   "type": "무기계약직",
-   "ncs": "보건.의료",
-   "end": "20260819",
-   "url": "https://www.comwel.or.kr/recruit/hp/main.do"
-  },
-  {
    "inst": "(주)강원랜드",
    "title": "(주)강원랜드 2026년 추계 2차 기간제 근로자 모집 공고",
    "region": "강원",
@@ -265,6 +256,15 @@
    "url": "https://www.nps.or.kr/pnsgdnc/hiregdnc/getOHAE0004M0List.do?menuId=MN24000969"
   },
   {
+   "inst": "한전KPS(주)",
+   "title": "(공고취소)한전KPS(주)안양사업소 경상정비공사 단기노무원 모집(정비보조)",
+   "region": "경기",
+   "type": "비정규직",
+   "ncs": "기계",
+   "end": "20260820",
+   "url": "https://www.kps.co.kr"
+  },
+  {
    "inst": "학교법인한국폴리텍",
    "title": "한국폴리텍대학 충주캠퍼스 업무직(대학운영직_조리원) 채용 공고",
    "region": "충북",
@@ -299,24 +299,6 @@
    "ncs": "사업관리,경영.회계.사무,보건.의료,음식서비스",
    "end": "20260820",
    "url": "https://www.haccp.or.kr/user/board.do?board=763"
-  },
-  {
-   "inst": "주택관리공단(주)",
-   "title": "채용형 인턴 채용공고(주택관리공단 전북지사)",
-   "region": "전북",
-   "type": "청년인턴(채용형)",
-   "ncs": "경영.회계.사무",
-   "end": "20260820",
-   "url": "www.kohom.or.kr"
-  },
-  {
-   "inst": "주택관리공단(주)",
-   "title": "채용형 인턴 채용공고(주택관리공단 전북지사)",
-   "region": "전북",
-   "type": "청년인턴(채용형)",
-   "ncs": "건설,기계,전기.전자,환경.에너지.안전",
-   "end": "20260820",
-   "url": "www.kohom.or.kr"
   },
   {
    "inst": "국립공원공단",
@@ -562,24 +544,6 @@
    "url": "https://nmc.recruiter.co.kr/app/jobnotice/view?systemKindCode=MRS2&jobnoticeSn=263013"
   },
   {
-   "inst": "근로복지공단",
-   "title": "[태백병원] 별정직 의사(병동당직의) 채용 공고",
-   "region": "강원",
-   "type": "정규직",
-   "ncs": "보건.의료",
-   "end": "20260824",
-   "url": "https://www.comwel.or.kr/recruit/hp/main.do"
-  },
-  {
-   "inst": "근로복지공단",
-   "title": "[태백병원] 의료직 4급(약사) 채용 공고",
-   "region": "강원",
-   "type": "정규직",
-   "ncs": "보건.의료",
-   "end": "20260824",
-   "url": "https://www.comwel.or.kr/recruit/hp/main.do"
-  },
-  {
    "inst": "제주대학교병원",
    "title": "제주대학교병원 사업인력 계약직(권역난임임산부심리상담센터_임상심리사 또는 사회복지사 또는 간호사) 모집공고",
    "region": "제주",
@@ -605,6 +569,15 @@
    "ncs": "경영.회계.사무,보건.의료,경비.청소",
    "end": "20260825",
    "url": "https://www.bohun.or.kr/seoul/na/ntt/selectNttInfo.do?mi=32253&bbsId=1158&bbsSysId=seoul&nttSn=188451"
+  },
+  {
+   "inst": "학교법인한국폴리텍",
+   "title": "한국폴리텍대학 동부산캠퍼스 체험형 청년인턴(장애) 채용(2차) 공고",
+   "region": "부산",
+   "type": "청년인턴(체험형)",
+   "ncs": "경영.회계.사무",
+   "end": "20260825",
+   "url": "https://www.kopo.ac.kr/dongbusan/board.do?menu=10554&mode=view&post=782241"
   },
   {
    "inst": "동남권원자력의학원",
@@ -925,15 +898,6 @@
    "inst": "대한적십자사",
    "title": "2026년도 제1차 혈액관리본부 소속기관 특정직 신규채용 공고(혈액수혈연구원)",
    "region": "강원",
-   "type": "비정규직",
-   "ncs": "보건.의료",
-   "end": "20260827",
-   "url": "https://www.redcross.or.kr/redrecruit/"
-  },
-  {
-   "inst": "대한적십자사",
-   "title": "2026년도 제7차 혈액관리본부 소속기관 의무직원 신규채용 공고(중앙혈액검사센터)",
-   "region": "서울",
    "type": "비정규직",
    "ncs": "보건.의료",
    "end": "20260827",
@@ -1309,6 +1273,33 @@
    "url": "https://kihasa.recruiter.co.kr"
   },
   {
+   "inst": "동남권원자력의학원",
+   "title": "[직원채용] 동남권원자력의학원 박사후 연수연구원(첨단방사선종양연구팀) 공개 채용",
+   "region": "부산",
+   "type": "비정규직",
+   "ncs": "연구",
+   "end": "20260831",
+   "url": "https://diramsjob.recruiter.co.kr/career/home"
+  },
+  {
+   "inst": "한전KDN",
+   "title": "한전KDN(주) 「AI기반 무정전활선작업 무인화 로봇플랫폼 개발 및 실증」연구과제 프로젝트계약근로자 채용공고",
+   "region": "대전,전남광주",
+   "type": "비정규직",
+   "ncs": "정보통신",
+   "end": "20260831",
+   "url": "."
+  },
+  {
+   "inst": "한전KDN",
+   "title": "한전KDN(주) VPP 연구과제 프로젝트계약근로자 채용공고",
+   "region": "전남광주",
+   "type": "비정규직",
+   "ncs": "정보통신",
+   "end": "20260831",
+   "url": "."
+  },
+  {
    "inst": "한국농업기술진흥원",
    "title": "2026년도 하반기 한국농업기술진흥원 정규직 공개경쟁채용 제한경쟁채용 및 사회형평채용 공고",
    "region": "전북,경북",
@@ -1325,6 +1316,15 @@
    "ncs": "사업관리,보건.의료",
    "end": "20260903",
    "url": "http://recruit.incruit.com/drugsafe"
+  },
+  {
+   "inst": "한전KPS(주)",
+   "title": "한전KPS(주)부산경남전력지사 기장지점 단기노무원(상주감시) 모집",
+   "region": "부산",
+   "type": "비정규직",
+   "ncs": "전기.전자",
+   "end": "20260908",
+   "url": "https://www.kps.co.kr"
   },
   {
    "inst": "전남대학교병원",

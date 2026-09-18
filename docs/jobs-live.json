@@ -1,44 +1,8 @@
 {
- "updated": "2026-09-18 08:21 KST",
+ "updated": "2026-09-19 07:59 KST",
  "source": "공공데이터포털 공공기관 채용정보 (재정경제부)",
  "count": 150,
  "postings": [
-  {
-   "inst": "한전KPS(주)",
-   "title": "한전KPS(주)강원충북전력지사 단기노무원(기술팀 차량순시) 채용공고(26차)",
-   "region": "강원",
-   "type": "비정규직",
-   "ncs": "건설,전기.전자",
-   "end": "20260918",
-   "url": "https://www.kps.co.kr"
-  },
-  {
-   "inst": "한전KPS(주)",
-   "title": "한전KPS(주)강원충북전력지사 단기노무원(강릉지점 차량순시) 채용공고(25차)",
-   "region": "강원",
-   "type": "비정규직",
-   "ncs": "건설,전기.전자",
-   "end": "20260918",
-   "url": "https://www.kps.co.kr"
-  },
-  {
-   "inst": "한전KPS(주)",
-   "title": "한전KPS(주)강원충북전력지사 단기노무원(춘천지점 차량순시) 채용공고(24차)",
-   "region": "강원",
-   "type": "비정규직",
-   "ncs": "건설,전기.전자",
-   "end": "20260918",
-   "url": "https://www.kps.co.kr"
-  },
-  {
-   "inst": "국립공원공단",
-   "title": "[설악산] 설악산국립공원 기간제 직원[환경관리(한시인력)] 채용 공고",
-   "region": "강원",
-   "type": "비정규직",
-   "ncs": "경비.청소",
-   "end": "20260918",
-   "url": "https://www.knps.or.kr/front/portal/recruit/recruitDtl.do?menuNo=7070064&emplyId=EMPM019756"
-  },
   {
    "inst": "국립공원공단",
    "title": "[경주] 2026년 경주국립공원 기간제(분묘조사) 직원 채용",
@@ -166,13 +130,13 @@
    "url": "https://www.pola.or.kr"
   },
   {
-   "inst": "경북대학교병원",
-   "title": "칠곡경북대학교병원 2026년 9월 4차 임시직원 채용공고(약사, 간호사, 업무보조, 작업치료사)",
-   "region": "대구",
+   "inst": "한전KPS(주)",
+   "title": "한전KPS(주) 대외사업센터 단기노무원 채용 공고(하남 SK위례)",
+   "region": "경기",
    "type": "비정규직",
-   "ncs": "보건.의료",
-   "end": "20260921",
-   "url": "https://www.knuch.kr:442/content/04info/11_01.asp?proc_type=view&b_num=5089&rtn_url=%2Fcontent%2F04info%2F11%5F01%2Easp"
+   "ncs": "전기.전자",
+   "end": "20260922",
+   "url": "https://www.kps.co.kr"
   },
   {
    "inst": "국립공원공단",
@@ -392,6 +356,15 @@
   },
   {
    "inst": "학교법인한국폴리텍",
+   "title": "한국폴리텍대학 서울정수캠퍼스 하반기 업무지원직(식당보조원) 2차 채용 공고",
+   "region": "서울",
+   "type": "비정규직",
+   "ncs": "음식서비스",
+   "end": "20260927",
+   "url": "https://www.kopo.ac.kr/jungsu/board.do?menu=254&mode=view&post=785211"
+  },
+  {
+   "inst": "학교법인한국폴리텍",
    "title": "한국폴리텍대학 창원캠퍼스 무기계약직원(조리원) 채용 공고",
    "region": "경남",
    "type": "무기계약직",
@@ -416,6 +389,69 @@
    "ncs": "음식서비스",
    "end": "20260927",
    "url": "https://www.kopo.ac.kr/changwon/board.do?menu=10551&mode=view&post=785156"
+  },
+  {
+   "inst": "국립공원공단",
+   "title": "[속리산] 속리산국립공원사무소 한시인력(탐방안내, 환경관리) 직원 채용",
+   "region": "충북,경북",
+   "type": "비정규직",
+   "ncs": "경비.청소,이용.숙박.여행.오락.스포츠",
+   "end": "20260928",
+   "url": "https://www.knps.or.kr/front/portal/recruit/recruitDtl.do?menuNo=7070064&emplyId=EMPM019786"
+  },
+  {
+   "inst": "한전KPS(주)",
+   "title": "한전KPS(주) 서울경기전력지사 고양지점 단기노무원(상주감시) 모집",
+   "region": "경기",
+   "type": "비정규직",
+   "ncs": "전기.전자",
+   "end": "20260928",
+   "url": "https://www.kps.co.kr"
+  },
+  {
+   "inst": "한전KPS(주)",
+   "title": "한전KPS(주) 서울경기전력지사 인천지점 단기노무원(부지정리) 모집",
+   "region": "인천",
+   "type": "비정규직",
+   "ncs": "전기.전자",
+   "end": "20260928",
+   "url": "https://www.kps.co.kr"
+  },
+  {
+   "inst": "근로복지공단",
+   "title": "[근로복지공단 소속병원] 의료직 채용 공고",
+   "region": "대구,인천,대전,경기,강원,전남광주,경북,경남",
+   "type": "정규직",
+   "ncs": "보건.의료",
+   "end": "20260928",
+   "url": "https://www.comwel.or.kr/recruit/hp/pblanc/pblancList.do"
+  },
+  {
+   "inst": "근로복지공단",
+   "title": "[인천병원] 별정직 의사(내과 또는 가정의학과) 채용 공고",
+   "region": "인천",
+   "type": "정규직",
+   "ncs": "보건.의료",
+   "end": "20260928",
+   "url": "https://www.comwel.or.kr/recruit/hp/main.do"
+  },
+  {
+   "inst": "근로복지공단",
+   "title": "[울산병원] 의료직(약사) 3급 채용 공고",
+   "region": "울산",
+   "type": "정규직",
+   "ncs": "보건.의료",
+   "end": "20260928",
+   "url": "https://www.comwel.or.kr/recruit/hp/main.do"
+  },
+  {
+   "inst": "근로복지공단",
+   "title": "[울산병원] 의료직(약사) 2급 채용 공고",
+   "region": "울산",
+   "type": "정규직",
+   "ncs": "보건.의료",
+   "end": "20260928",
+   "url": "https://www.comwel.or.kr/recruit/hp/main.do"
   },
   {
    "inst": "국립중앙의료원",
@@ -535,22 +571,40 @@
    "url": "https://www.kopo.ac.kr/kapc/board.do?menu=3829&mode=view&post=784984"
   },
   {
-   "inst": "국가아동권리보장원",
-   "title": "(제2026-2호) 국가아동권리보장원 직원 채용",
-   "region": "서울,경기",
-   "type": "정규직,비정규직",
-   "ncs": "사업관리,경영.회계.사무,사회복지.종교,문화.예술.디자인.방송,정보통신",
-   "end": "20260928",
-   "url": "https://www.ncrc.or.kr/ncrc/na/ntt/selectNttInfo.do?mi=1548&bbsId=1012&nttSn=11054&cataGori=&tabName="
+   "inst": "한국보훈복지의료공단",
+   "title": "[원주보훈요양원] 2026년 제2차 체험형 청년인턴(장애인)(재공고) 채용",
+   "region": "강원",
+   "type": "청년인턴(체험형)",
+   "ncs": "사회복지.종교",
+   "end": "20260929",
+   "url": "https://www.bohun.or.kr/wjcare/na/ntt/selectNttList.do?mi=35524&bbsId=1314"
   },
   {
-   "inst": "한국보훈복지의료공단",
-   "title": "[광주보훈병원] 계약직 보건직(치과위생사) 직원 채용 공고",
-   "region": "전남광주",
+   "inst": "근로복지공단",
+   "title": "[태백병원] 기간제 의사(응급실전담의) 채용 공고",
+   "region": "강원",
    "type": "비정규직",
    "ncs": "보건.의료",
-   "end": "20260928",
-   "url": "https://www.bohun.or.kr/gwangju/na/ntt/selectNttInfo.do?mi=32890&bbsId=1158&bbsSysId=gwangju&nttSn=189475"
+   "end": "20260929",
+   "url": "https://www.comwel.or.kr/recruit/hp/main.do"
+  },
+  {
+   "inst": "근로복지공단",
+   "title": "[태백병원] 공무직(시설미화원) 채용 공고",
+   "region": "강원",
+   "type": "무기계약직",
+   "ncs": "보건.의료,경비.청소",
+   "end": "20260929",
+   "url": "https://www.comwel.or.kr/recruit/hp/main.do"
+  },
+  {
+   "inst": "국립호남권생물자원관",
+   "title": "국립호남권생물자원관 기간제ㆍ단시간 근로자(급식종사자) 채용 재공고",
+   "region": "전남광주",
+   "type": "비정규직",
+   "ncs": "경영.회계.사무,보건.의료,음식서비스",
+   "end": "20260929",
+   "url": "https://hnibr.re.kr/ko/M000000515/bbs/view?pstNo=33730&pageUnit=10&pageIndex=1&searchCnd=01&searchWrd=&searchPstClCdId="
   },
   {
    "inst": "한국공항공사",
@@ -643,15 +697,6 @@
    "url": "https://www.comwel.or.kr/recruit/hp/main.do"
   },
   {
-   "inst": "해양환경공단",
-   "title": "2026년 하반기 해양환경공단 업무지원직(기간제 근로자) 채용 공고",
-   "region": "서울,충남",
-   "type": "비정규직",
-   "ncs": "사업관리,경영.회계.사무,교육.자연.사회과학,환경.에너지.안전",
-   "end": "20260929",
-   "url": "https://www.koem.or.kr/site/insa/ex/board/View.do?cbIdx=478&bcIdx=36390"
-  },
-  {
    "inst": "한국전력공사",
    "title": "2026년 제1차 장애인 체험형 인턴 모집공고[서울본부]",
    "region": "서울",
@@ -659,96 +704,6 @@
    "ncs": "경영.회계.사무",
    "end": "20260929",
    "url": "http://recruit.kepco.co.kr/sangsi"
-  },
-  {
-   "inst": "축산물품질평가원",
-   "title": "2026년 하반기 신규직원 기간제 근로자(장애) 채용공고",
-   "region": "세종",
-   "type": "비정규직",
-   "ncs": "사업관리,경영.회계.사무,농림어업",
-   "end": "20260929",
-   "url": "https://ekape.or.kr/board/view.do?menuId=menu138147&boardNo=866&dmlType=SELECT&pageIndex=1&pageUnit=10&categoryNo=&tabIndex=&searchCondition=SUBJECT&searchKeyword="
-  },
-  {
-   "inst": "축산물품질평가원",
-   "title": "2026년 하반기 신규직원 운영직(다급) 채용공고",
-   "region": "경기,강원",
-   "type": "무기계약직",
-   "ncs": "사업관리,경영.회계.사무,농림어업",
-   "end": "20260929",
-   "url": "https://ekape.or.kr/board/view.do?menuId=menu138147&boardNo=865&dmlType=SELECT&pageIndex=1&pageUnit=10&categoryNo=&tabIndex=&searchCondition=SUBJECT&searchKeyword="
-  },
-  {
-   "inst": "축산물품질평가원",
-   "title": "2026년 하반기 신규직원 체험형 청년인턴(장애) 채용공고",
-   "region": "세종,경기,강원,충북,전북,전남광주,경남,제주",
-   "type": "청년인턴(체험형)",
-   "ncs": "사업관리,경영.회계.사무,농림어업",
-   "end": "20260929",
-   "url": "https://ekape.or.kr/board/view.do?menuId=menu138147&boardNo=863&dmlType=SELECT&pageIndex=1&pageUnit=10&categoryNo=&tabIndex=&searchCondition=SUBJECT&searchKeyword="
-  },
-  {
-   "inst": "축산물품질평가원",
-   "title": "2026년 하반기 신규직원 기간제 근로자(공인노무사) 채용공고",
-   "region": "세종",
-   "type": "비정규직",
-   "ncs": "사업관리,경영.회계.사무,농림어업",
-   "end": "20260929",
-   "url": "https://ekape.or.kr/board/view.do?menuId=menu138147&boardNo=862&dmlType=SELECT&pageIndex=1&pageUnit=10&categoryNo=&tabIndex=&searchCondition=SUBJECT&searchKeyword="
-  },
-  {
-   "inst": "축산물품질평가원",
-   "title": "2026년 하반기 신규직원 보훈특별고용(행정직) 채용공고",
-   "region": "세종",
-   "type": "청년인턴(채용형)",
-   "ncs": "사업관리,경영.회계.사무,농림어업",
-   "end": "20260929",
-   "url": "https://ekape.or.kr/board/view.do?menuId=menu138147&boardNo=861&dmlType=SELECT&pageIndex=1&pageUnit=10&categoryNo=&tabIndex=&searchCondition=SUBJECT&searchKeyword="
-  },
-  {
-   "inst": "축산물품질평가원",
-   "title": "2026년 하반기 신규직원 채용형 청년인턴(행정직) 채용",
-   "region": "세종",
-   "type": "청년인턴(채용형)",
-   "ncs": "사업관리,경영.회계.사무,농림어업",
-   "end": "20260929",
-   "url": "https://ekape.or.kr/board/view.do?menuId=menu138147&boardNo=860&dmlType=SELECT&pageIndex=1&pageUnit=10&categoryNo=&tabIndex=&searchCondition=SUBJECT&searchKeyword="
-  },
-  {
-   "inst": "축산물품질평가원",
-   "title": "2026년 하반기 신규직원 보훈특별고용(축산물품질평가직) 채용",
-   "region": "부산,대구,인천,대전,울산,세종,경기,강원,충북,충남,전북,전남광주,경북,경남,제주",
-   "type": "청년인턴(채용형)",
-   "ncs": "농림어업",
-   "end": "20260929",
-   "url": "https://ekape.or.kr/board/view.do?menuId=menu138147&boardNo=859&dmlType=SELECT&pageIndex=1&pageUnit=10&categoryNo=&tabIndex=&searchCondition=SUBJECT&searchKeyword="
-  },
-  {
-   "inst": "축산물품질평가원",
-   "title": "2026년 하반기 신규직원 채용형 청년인턴(축산물품질평가직) 채용공고",
-   "region": "부산,대구,인천,대전,울산,세종,경기,강원,충북,충남,전북,전남광주,경북,경남,제주",
-   "type": "청년인턴(채용형)",
-   "ncs": "농림어업",
-   "end": "20260929",
-   "url": "https://ekape.or.kr/board/view.do?menuId=menu138147&boardNo=858&dmlType=SELECT&pageIndex=1&pageUnit=10&categoryNo=&tabIndex=&searchCondition=SUBJECT&searchKeyword="
-  },
-  {
-   "inst": "한국연구재단",
-   "title": "한국연구재단 2026년도 체험형 청년인턴(장애) 및 제7차 사업위촉직 채용 공고",
-   "region": "서울,대전",
-   "type": "비정규직,청년인턴(체험형)",
-   "ncs": "사업관리,경영.회계.사무",
-   "end": "20260929",
-   "url": "https://www.nrf.re.kr/page/54?ac=view&postNo=281963&pageNum=1&searchType=&searchText=&menuNo=54&boardNo=7&menuTypeCd=MENU_TYPE_02&code="
-  },
-  {
-   "inst": "한국토지주택공사",
-   "title": "2026년 하반기 한국토지주택공사 신입사원(5·6급) 공채",
-   "region": "서울,부산,대구,인천,대전,울산,세종,경기,강원,충북,충남,전북,전남광주,경북,경남,제주",
-   "type": "청년인턴(채용형)",
-   "ncs": "사업관리,경영.회계.사무,법률.경찰.소방.교도.국방,사회복지.종교,문화.예술.디자인.방송,영업판매,건설,기계,화학,전기.전자,정보통신,환경.에너지.안전",
-   "end": "20260929",
-   "url": "https://www.lh.or.kr/board.es?mid=a10602060000&bid=0053&act=view&list_no=734050&tag=&nPage=1"
   },
   {
    "inst": "동남권원자력의학원",
@@ -911,24 +866,6 @@
    "ncs": "경영.회계.사무,문화.예술.디자인.방송,정보통신",
    "end": "20260930",
    "url": "https://kf.recruiter.co.kr"
-  },
-  {
-   "inst": "KDI국제정책대학원",
-   "title": "[KDI국제정책대학원] 2026년 제9차 위촉직 채용(교육행정, 연구행정, 기계설비·안전관리)",
-   "region": "세종",
-   "type": "비정규직",
-   "ncs": "사업관리,교육.자연.사회과학,기계",
-   "end": "20260930",
-   "url": "https://kdischool.recruiter.co.kr"
-  },
-  {
-   "inst": "한전KDN",
-   "title": "한전KDN(주) 진주지사 통신분야 비정규직 모집공고",
-   "region": "경남",
-   "type": "비정규직",
-   "ncs": "전기.전자,정보통신",
-   "end": "20260930",
-   "url": "없음."
   },
   {
    "inst": "(주)강원랜드",
@@ -1120,6 +1057,60 @@
    "url": "https://cw.careerlink.kr"
   },
   {
+   "inst": "예금보험공사",
+   "title": "예금보험공사 업무지원직원(무기계약직·무기계약직(보훈) 및 육아휴직대체) 채용 안내",
+   "region": "서울",
+   "type": "무기계약직,비정규직",
+   "ncs": "경영.회계.사무",
+   "end": "20261002",
+   "url": "https://www.kdic.or.kr"
+  },
+  {
+   "inst": "해양환경공단",
+   "title": "2026년 하반기 해양환경공단 업무지원직(기간제 근로자) 채용 공고",
+   "region": "서울,경기",
+   "type": "비정규직",
+   "ncs": "사업관리,경영.회계.사무,교육.자연.사회과학,환경.에너지.안전",
+   "end": "20261002",
+   "url": "https://www.koem.or.kr/site/insa/ex/board/View.do?cbIdx=478&bcIdx=36390"
+  },
+  {
+   "inst": "한국조폐공사",
+   "title": "2027년도 한국조폐공사 경력직 채용공고",
+   "region": "서울,대전",
+   "type": "정규직",
+   "ncs": "사업관리,경영.회계.사무,영업판매,정보통신,연구",
+   "end": "20261002",
+   "url": "https://www.komsco.com/kor/88/recruitment/206?pageIndex=1&searchCondition=&searchKeyword="
+  },
+  {
+   "inst": "한국조폐공사",
+   "title": "2027년도 한국조폐공사 신입직원(채용형인턴) 채용공고",
+   "region": "서울,대전,충남,경북",
+   "type": "청년인턴(채용형)",
+   "ncs": "사업관리,경영.회계.사무,문화.예술.디자인.방송,영업판매,기계,화학,전기.전자,정보통신,인쇄.목재.가구.공예,환경.에너지.안전,농림어업,연구",
+   "end": "20261002",
+   "url": "https://www.komsco.com/kor/88/recruitment/205?pageIndex=1&searchCondition=&searchKeyword="
+  },
+  {
+   "inst": "공무원연금공단",
+   "title": "자금운용 전문계약직(해외투자팀장) 채용 공고",
+   "region": "서울",
+   "type": "비정규직",
+   "ncs": "금융.보험",
+   "end": "20261002",
+   "url": "https://www.geps.or.kr/notiCommunication_info_incruit/43091?curPage=1"
+  },
+  {
+   "inst": "한국식품산업클러스터진흥원",
+   "title": "한국식품산업클러스터진흥원 2026년 제4차 직원(정규직, 계약직) 채용 공고",
+   "region": "전북",
+   "type": "정규직,무기계약직,비정규직",
+   "ncs": "사업관리,경영.회계.사무,교육.자연.사회과학,운전.운송,건설,기계,화학,식품가공,환경.에너지.안전",
+   "end": "20261002",
+   "url": "https://www.foodpolis.kr/web/Board/4424/detailView.do?pageIndex=1&menu=2307"
+  },
+  {
    "inst": "한전KDN",
    "title": "한전KDN 국외 마이크로인버터 사업 업무지원 분야 기간제근로자 채용공고",
    "region": "해외",
@@ -1210,15 +1201,6 @@
    "url": "https://ibs.re.kr/prog/recruit/kor/sub04_01/list.do"
   },
   {
-   "inst": "한국중부발전(주)",
-   "title": "2026년도 제3차 4직급 신입직원 채용공고",
-   "region": "서울,인천,세종,충남,경남,제주",
-   "type": "정규직",
-   "ncs": "경영.회계.사무,건설,화학,전기.전자,정보통신,환경.에너지.안전",
-   "end": "20261002",
-   "url": "https://www.komipo.co.kr"
-  },
-  {
    "inst": "대한적십자사",
    "title": "서울적십자병원 계약직 기능직(장애인제한경쟁) 신규채용 공고",
    "region": "서울",
@@ -1264,6 +1246,24 @@
    "url": "https://www.redcross.or.kr/redrecruit"
   },
   {
+   "inst": "한국항로표지기술원",
+   "title": "한국항로표지기술원 기간제 계약직(연구원) 채용 공고",
+   "region": "세종",
+   "type": "비정규직",
+   "ncs": "사업관리,정보통신",
+   "end": "20261006",
+   "url": "https://recruit.incruit.com/katon/"
+  },
+  {
+   "inst": "기초과학연구원",
+   "title": "2026-11회 생명과학 연구클러스터 연구직 채용 공고",
+   "region": "대전",
+   "type": "비정규직",
+   "ncs": "연구",
+   "end": "20261006",
+   "url": "https://ibs.re.kr/prog/recruit/kor/sub04_01/list.do"
+  },
+  {
    "inst": "한국수력원자력(주)",
    "title": "2026년 제2차 방사선보건원 기간제근로자 채용",
    "region": "서울",
@@ -1291,15 +1291,6 @@
    "url": "http://kotra.careerlink.kr"
   },
   {
-   "inst": "중소기업기술정보진흥원",
-   "title": "2026년 제2차 공무직(보훈, 장애) 채용 공고",
-   "region": "세종",
-   "type": "무기계약직",
-   "ncs": "사업관리,경영.회계.사무",
-   "end": "20261007",
-   "url": "https://tipa.or.kr/s040401/view/id/17723"
-  },
-  {
    "inst": "한국생명존중희망재단",
    "title": "[제2026-4호] 한국생명존중희망재단 제4차 직원 채용 (공개, 제한경쟁) 공고",
    "region": "서울",
@@ -1316,6 +1307,15 @@
    "ncs": "경영.회계.사무,건설",
    "end": "20261014",
    "url": "https://www.lx.or.kr/kor/BBSMSTR_000000000001/25605/view.do"
+  },
+  {
+   "inst": "한국사학진흥재단",
+   "title": "한국사학진흥재단 2026년 1차 직원 채용 (제한경쟁채용 및 상시채용)",
+   "region": "대구",
+   "type": "무기계약직",
+   "ncs": "경영.회계.사무",
+   "end": "20261030",
+   "url": "https://kasfo1.scout.co.kr"
   },
   {
    "inst": "충남대학교병원",

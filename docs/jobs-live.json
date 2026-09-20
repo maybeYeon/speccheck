@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-20 07:38 KST",
+ "updated": "2026-09-21 07:55 KST",
  "source": "공공데이터포털 공공기관 채용정보 (재정경제부)",
  "count": 150,
  "postings": [
@@ -92,33 +92,6 @@
    "ncs": "경비.청소",
    "end": "20260921",
    "url": "https://www.knps.or.kr/front/portal/recruit/recruitDtl.do?menuNo=7070064&emplyId=EMPM019759"
-  },
-  {
-   "inst": "국립공원공단",
-   "title": "[다도해해상]2026년 다도해해상 한시인력[탐방로예약제 운영] 직원 채용",
-   "region": "전남광주",
-   "type": "비정규직",
-   "ncs": "환경.에너지.안전",
-   "end": "20260921",
-   "url": "https://www.knps.or.kr/front/portal/recruit/recruitDtl.do?menuNo=7070064&emplyId=EMPM019758"
-  },
-  {
-   "inst": "국립공원공단",
-   "title": "[다도해해상]2026년 다도해해상 한시인력[환경관리(환경미화)] 직원 채용(3차)",
-   "region": "전남광주",
-   "type": "비정규직",
-   "ncs": "환경.에너지.안전",
-   "end": "20260921",
-   "url": "https://www.knps.or.kr/front/portal/recruit/recruitDtl.do?menuNo=7070064&emplyId=EMPM019757"
-  },
-  {
-   "inst": "(재)우체국물류지원단",
-   "title": "우체국물류지원단 광주지사 기간제(소포직, 육아휴직대체) 채용 공고",
-   "region": "전북",
-   "type": "비정규직",
-   "ncs": "경영.회계.사무,운전.운송",
-   "end": "20260921",
-   "url": "https://www.pola.or.kr"
   },
   {
    "inst": "한전KPS(주)",
@@ -220,15 +193,6 @@
    "url": "www.kohom.or.kr"
   },
   {
-   "inst": "국민연금공단",
-   "title": "[국민연금공단 부산지역본부] 부산지역본부 양산지사 공무직(환경관리직(가), 보안직(가)) 공개채용 공고",
-   "region": "경남",
-   "type": "무기계약직",
-   "ncs": "경비.청소",
-   "end": "20260922",
-   "url": "https://www.nps.or.kr/pnsgdnc/hiregdnc/getOHAE0004M0List.do?menuId=MN24000969"
-  },
-  {
    "inst": "학교법인한국폴리텍",
    "title": "한국폴리텍대학 광명융합기술교육원 대학운영직(경비원) _보훈특별고용 채용 2차 재공고",
    "region": "경기",
@@ -326,6 +290,15 @@
    "ncs": "환경.에너지.안전",
    "end": "20260923",
    "url": "https://www.knps.or.kr/front/portal/recruit/recruitDtl.do?menuNo=7070064&emplyId=EMPM019768"
+  },
+  {
+   "inst": "한전KPS(주)",
+   "title": "한전KPS(주)강원충북전력지사 단기노무원(동해지점 차량순시) 채용공고(28차)",
+   "region": "강원",
+   "type": "비정규직",
+   "ncs": "건설,전기.전자",
+   "end": "20260923",
+   "url": "https://www.kps.co.kr"
   },
   {
    "inst": "근로복지공단",
@@ -859,15 +832,6 @@
    "url": "https://www.kca.go.kr/kca/sub.do?menukey=5113&mode=view&no=1004559980"
   },
   {
-   "inst": "한국국제교류재단",
-   "title": "한국국제교류재단 일반직 신규 채용 공고",
-   "region": "서울,부산,제주",
-   "type": "정규직",
-   "ncs": "경영.회계.사무,문화.예술.디자인.방송,정보통신",
-   "end": "20260930",
-   "url": "https://kf.recruiter.co.kr"
-  },
-  {
    "inst": "(주)강원랜드",
    "title": "(주)강원랜드 2026년 하이원 글로벌 아카데미 체험형인턴 모집 공고",
    "region": "서울",
@@ -1048,15 +1012,6 @@
    "url": "https://www.lh.or.kr/board.es?mid=a10602050000&bid=0036&act=view&list_no=734081&tag=&nPage=1"
   },
   {
-   "inst": "건설근로자공제회",
-   "title": "2026년 건설근로자공제회 제2차 채용공고[일반직(6급, 7급), 무기직(기능직, 상담직), 휴직대체(기간제), 체험형 청년인턴]",
-   "region": "서울,부산,대구,인천,대전,경기,강원,전북,전남광주,제주",
-   "type": "정규직,무기계약직,비정규직,청년인턴(체험형)",
-   "ncs": "경영.회계.사무,운전.운송",
-   "end": "20261001",
-   "url": "https://cw.careerlink.kr"
-  },
-  {
    "inst": "예금보험공사",
    "title": "예금보험공사 업무지원직원(무기계약직·무기계약직(보훈) 및 육아휴직대체) 채용 안내",
    "region": "서울",
@@ -1192,15 +1147,6 @@
    "url": "https://www.kcisa.kr/kr/board/recruit/boardView.do?bbsIdx=20597&pageIndex=1&searchCondition=&searchKeyword="
   },
   {
-   "inst": "기초과학연구원",
-   "title": "제2026-3회 IBS 융합과학 연구클러스터 연구직군 채용공고",
-   "region": "울산",
-   "type": "비정규직",
-   "ncs": "연구",
-   "end": "20261002",
-   "url": "https://ibs.re.kr/prog/recruit/kor/sub04_01/list.do"
-  },
-  {
    "inst": "대한적십자사",
    "title": "서울적십자병원 계약직 기능직(장애인제한경쟁) 신규채용 공고",
    "region": "서울",
@@ -1246,6 +1192,69 @@
    "url": "https://www.redcross.or.kr/redrecruit"
   },
   {
+   "inst": "한국토지주택공사",
+   "title": "한국토지주택공사 대전충남지역본부 기간제근로자 채용공고",
+   "region": "대전",
+   "type": "비정규직",
+   "ncs": "경영.회계.사무,사회복지.종교,영업판매",
+   "end": "20261005",
+   "url": "https://www.lh.or.kr"
+  },
+  {
+   "inst": "한전KDN",
+   "title": "한전KDN(주) 대전충남본부 AMI분야 작업원(장애인) 추가 모집공고",
+   "region": "대전,세종,충남",
+   "type": "비정규직",
+   "ncs": "전기.전자,정보통신",
+   "end": "20261005",
+   "url": "/"
+  },
+  {
+   "inst": "극지연구소",
+   "title": "2026년 하반기 극지연구소 연수생 채용 공고",
+   "region": "인천",
+   "type": "비정규직",
+   "ncs": "연구",
+   "end": "20261006",
+   "url": "https://kopri.recruiter.co.kr"
+  },
+  {
+   "inst": "극지연구소",
+   "title": "2026년 하반기 연수연구원(박사후 및 석사후) 채용 공고문",
+   "region": "인천",
+   "type": "비정규직",
+   "ncs": "연구",
+   "end": "20261006",
+   "url": "https://kopri.recruiter.co.kr"
+  },
+  {
+   "inst": "극지연구소",
+   "title": "2026년 하반기(2차) 육아휴직대체인력(행정·기술) 공개채용 공고",
+   "region": "인천",
+   "type": "비정규직",
+   "ncs": "경영.회계.사무,건설",
+   "end": "20261006",
+   "url": "https://kopri.recruiter.co.kr/"
+  },
+  {
+   "inst": "극지연구소",
+   "title": "2026년 하반기 극지연구소 기간제계약직 채용 공고",
+   "region": "부산,인천,경남",
+   "type": "비정규직",
+   "ncs": "기계,화학,전기.전자,정보통신,환경.에너지.안전,연구",
+   "end": "20261006",
+   "url": "https://kopri.recruiter.co.kr/"
+  },
+  {
+   "inst": "극지연구소",
+   "title": "2026년 하반기 극지연구소 무기계약직(행정직) 채용 공고",
+   "region": "인천",
+   "type": "무기계약직",
+   "ncs": "경영.회계.사무",
+   "end": "20261006",
+   "url": "https://kopri.recruiter.co.kr/"
+  },
+  {
    "inst": "한국항로표지기술원",
    "title": "한국항로표지기술원 기간제 계약직(연구원) 채용 공고",
    "region": "세종",
@@ -1271,15 +1280,6 @@
    "ncs": "보건.의료,연구",
    "end": "20261006",
    "url": "https://www.khnp.co.kr/recruit_te"
-  },
-  {
-   "inst": "기초과학연구원",
-   "title": "2026-9회 의생명 및 화학 연구클러스터(시냅스 뇌질환 연구단) 연구기술직 채용 공고",
-   "region": "대전",
-   "type": "비정규직",
-   "ncs": "연구",
-   "end": "20261006",
-   "url": "https://ibs.re.kr/prog/recruit/kor/sub04_01/list.do"
   },
   {
    "inst": "대한무역투자진흥공사",

@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-24 08:24 KST",
+ "updated": "2026-09-25 08:44 KST",
  "source": "공공데이터포털 공공기관 채용정보 (재정경제부)",
  "count": 150,
  "postings": [
@@ -276,15 +276,6 @@
   {
    "inst": "근로복지공단",
    "title": "[안산병원] 기간제(간호조무사) 채용 공고",
-   "region": "경기",
-   "type": "비정규직",
-   "ncs": "보건.의료",
-   "end": "20260930",
-   "url": "https://www.comwel.or.kr/recruit/hp/main.do"
-  },
-  {
-   "inst": "근로복지공단",
-   "title": "[안산병원] 기간제(물리치료사) 채용 공고",
    "region": "경기",
    "type": "비정규직",
    "ncs": "보건.의료",
@@ -1127,6 +1118,15 @@
    "ncs": "경영.회계.사무,금융.보험",
    "end": "20261007",
    "url": "https://www.ksure.or.kr/rh-kr/bbs/i-425/detail.do?ntt_sn=624571"
+  },
+  {
+   "inst": "국립공원공단",
+   "title": "[속리산] 속리산국립공원사무소 기간제(탐방해설) 직원 채용 재공고",
+   "region": "충북,경북",
+   "type": "비정규직",
+   "ncs": "이용.숙박.여행.오락.스포츠",
+   "end": "20261008",
+   "url": "https://www.knps.or.kr/front/portal/recruit/recruitDtl.do?menuNo=7070064&emplyId=EMPM019812"
   },
   {
    "inst": "한국중부발전(주)",

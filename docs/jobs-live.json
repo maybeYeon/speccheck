@@ -1,17 +1,8 @@
 {
- "updated": "2026-10-09 09:56 KST",
+ "updated": "2026-10-10 09:28 KST",
  "source": "공공데이터포털 공공기관 채용정보 (재정경제부)",
  "count": 150,
  "postings": [
-  {
-   "inst": "전남대학교병원",
-   "title": "2026년 10월 전남대학교병원 직원(대체근로자) 공개채용 공고",
-   "region": "전남광주",
-   "type": "비정규직",
-   "ncs": "보건.의료",
-   "end": "20261009",
-   "url": "https://cnuh.recruiter.co.kr/"
-  },
   {
    "inst": "국립공원공단",
    "title": "[치악산] 치악산국립공원사무소 기간제(수익시설) 직원 채용",
@@ -74,15 +65,6 @@
    "ncs": "환경.에너지.안전",
    "end": "20261012",
    "url": "http://www.kps.co.kr"
-  },
-  {
-   "inst": "경북대학교병원",
-   "title": "칠곡경북대학교병원 2026년 10월 1차 임시직원 채용공고(행정, 간호사, 사회복지사, 업무보조)",
-   "region": "대구",
-   "type": "비정규직",
-   "ncs": "보건.의료",
-   "end": "20261012",
-   "url": "https://www.knuch.kr:442/content/04info/11_01.asp?proc_type=view&b_num=5092&rtn_url=%2Fcontent%2F04info%2F11%5F01%2Easp"
   },
   {
    "inst": "한국보훈복지의료공단",
@@ -209,6 +191,15 @@
    "ncs": "경영.회계.사무",
    "end": "20261014",
    "url": "https://www.kopo.ac.kr/namdaegu/board.do?menu=10548&mode=view&post=786424"
+  },
+  {
+   "inst": "경북대학교병원",
+   "title": "칠곡경북대학교병원 2026년 10월 1차 임시직원 채용공고(행정, 간호사, 사회복지사, 업무보조)",
+   "region": "대구",
+   "type": "비정규직",
+   "ncs": "보건.의료",
+   "end": "20261015",
+   "url": "https://www.knuch.kr:442/content/04info/11_01.asp?proc_type=view&b_num=5092&rtn_url=%2Fcontent%2F04info%2F11%5F01%2Easp"
   },
   {
    "inst": "국립공원공단",
@@ -650,6 +641,15 @@
    "ncs": "사회복지.종교",
    "end": "20261019",
    "url": "https://www.bohun.or.kr/wjcare/na/ntt/selectNttInfo.do?mi=35524&bbsId=1314&bbsSysId=wjcare&nttSn=189976"
+  },
+  {
+   "inst": "한국수출입은행",
+   "title": "한국수출입은행 2026년 하반기 전문직행원(신입) 채용",
+   "region": "서울",
+   "type": "정규직",
+   "ncs": "사업관리,경영.회계.사무,금융.보험,정보통신",
+   "end": "20261019",
+   "url": "http://koreaexim.incruit.com/"
   },
   {
    "inst": "한국도로공사",

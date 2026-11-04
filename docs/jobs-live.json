@@ -1,17 +1,8 @@
 {
- "updated": "2026-11-03 11:44 KST",
+ "updated": "2026-11-04 10:01 KST",
  "source": "공공데이터포털 공공기관 채용정보 (재정경제부)",
  "count": 150,
  "postings": [
-  {
-   "inst": "한전KPS(주)",
-   "title": "한전KPS(주)신한울1사업소 '26년도 신한울2호기 제2차 OH 단기노무원 채용 공고",
-   "region": "경북",
-   "type": "비정규직",
-   "ncs": "운전.운송,건설,기계,전기.전자,환경.에너지.안전",
-   "end": "20261103",
-   "url": "https://www.kps.co.kr"
-  },
   {
    "inst": "한전KPS(주)",
    "title": "한전KPS(주)서인천사업처 신인천 4CC 계획예방정비공사 단기노무원 채용공고",
@@ -76,69 +67,6 @@
    "url": "https://gnuh.recruiter.co.kr/"
   },
   {
-   "inst": "경상국립대학교병원",
-   "title": "단시간제(편의시설 점원) 채용공고",
-   "region": "경남",
-   "type": "비정규직",
-   "ncs": "보건.의료",
-   "end": "20261104",
-   "url": "https://gnuh.recruiter.co.kr"
-  },
-  {
-   "inst": "경상국립대학교병원",
-   "title": "장애인근로자 채용공고",
-   "region": "경남",
-   "type": "비정규직",
-   "ncs": "보건.의료",
-   "end": "20261104",
-   "url": "https://gnuh.recruiter.co.kr"
-  },
-  {
-   "inst": "경상국립대학교병원",
-   "title": "계약직 채용공고",
-   "region": "경남",
-   "type": "비정규직",
-   "ncs": "보건.의료",
-   "end": "20261104",
-   "url": "https://gnuh.recruiter.co.kr"
-  },
-  {
-   "inst": "경상국립대학교병원",
-   "title": "업무지원직 채용공고",
-   "region": "경남",
-   "type": "정규직",
-   "ncs": "보건.의료",
-   "end": "20261104",
-   "url": "https://gnuh.recruiter.co.kr/"
-  },
-  {
-   "inst": "경상국립대학교병원",
-   "title": "원무직 채용 공고",
-   "region": "경남",
-   "type": "정규직",
-   "ncs": "보건.의료",
-   "end": "20261104",
-   "url": "https://gnuh.recruiter.co.kr/"
-  },
-  {
-   "inst": "경상국립대학교병원",
-   "title": "행정직, 의료기술직 채용공고",
-   "region": "경남",
-   "type": "정규직",
-   "ncs": "보건.의료",
-   "end": "20261104",
-   "url": "https://gnuh.recruiter.co.kr/"
-  },
-  {
-   "inst": "경북대학교병원",
-   "title": "칠곡경북대학교병원 2026년 10월 5차 임시직원 채용공고(소방, 방사선사, 임상병리사, 간호조무사)",
-   "region": "대구",
-   "type": "비정규직",
-   "ncs": "보건.의료",
-   "end": "20261104",
-   "url": "https://www.knuch.kr:442/content/04info/11_01.asp?proc_type=view&b_num=5097&rtn_url=%2Fcontent%2F04info%2F11%5F01%2Easp"
-  },
-  {
    "inst": "한국고전번역원",
    "title": "한국고전번역원 2026년 4분기 제2차 직원 신규 채용",
    "region": "서울",
@@ -146,33 +74,6 @@
    "ncs": "사업관리,교육.자연.사회과학,연구",
    "end": "20261105",
    "url": "https://www.itkc.or.kr/bbs/boardView.do?id=2&bIdx=316490&page=1&menuId=99&bc=0&sortName=&sortType="
-  },
-  {
-   "inst": "근로복지공단",
-   "title": "[광산지사] 기간제근로자(근로자정보조사원-휴직대체) 채용 공고",
-   "region": "전남광주",
-   "type": "비정규직",
-   "ncs": "경영.회계.사무",
-   "end": "20261105",
-   "url": "https://www.comwel.or.kr/recruit/hp/main.do"
-  },
-  {
-   "inst": "근로복지공단",
-   "title": "[동해병원] 기간제 의사(내과) 채용 공고",
-   "region": "강원",
-   "type": "비정규직",
-   "ncs": "보건.의료",
-   "end": "20261105",
-   "url": "https://www.comwel.or.kr/recruit/hp/main.do"
-  },
-  {
-   "inst": "근로복지공단",
-   "title": "[동해병원] 기간제 의사(산부인과) 채용 공고",
-   "region": "강원",
-   "type": "비정규직",
-   "ncs": "보건.의료",
-   "end": "20261105",
-   "url": "https://www.comwel.or.kr/recruit/hp/main.do"
   },
   {
    "inst": "국립공원공단",
@@ -220,13 +121,40 @@
    "url": "https://www.knps.or.kr/front/portal/recruit/recruitDtl.do?menuNo=7070064&emplyId=EMPM019991"
   },
   {
-   "inst": "근로복지공단",
-   "title": "[태백병원] 기간제 의사(응급실전담의) 채용 공고",
-   "region": "강원",
+   "inst": "국립공원공단",
+   "title": "[지리산전북] 지리산국립공원전북사무소 한시인력(수익시설) 직원 채용",
+   "region": "전북",
+   "type": "비정규직",
+   "ncs": "환경.에너지.안전",
+   "end": "20261108",
+   "url": "https://www.knps.or.kr/front/portal/recruit/recruitDtl.do?menuNo=7070064&emplyId=EMPM020010"
+  },
+  {
+   "inst": "(재)우체국시설관리단",
+   "title": "(재)우체국시설관리단 현장직원 2026년도 12차 통합 채용 공고(기술, 경비, 미화, 기타)",
+   "region": "서울,인천,강원,충북,충남,전북,전남광주,제주",
+   "type": "무기계약직,비정규직",
+   "ncs": "사업관리,경비.청소",
+   "end": "20261109",
+   "url": "https://poma.hrdms.kr"
+  },
+  {
+   "inst": "한전KPS(주)",
+   "title": "한전KPS(주) 서울경기전력지사 군포지점 단기노무원(상주감시) 모집",
+   "region": "경기",
+   "type": "비정규직",
+   "ncs": "전기.전자",
+   "end": "20261109",
+   "url": "https://www.kps.co.kr"
+  },
+  {
+   "inst": "경북대학교병원",
+   "title": "칠곡경북대학교병원 2026년 11월 1차 임시직원 채용공고(행정, 임상병리사, 간호사, 업무보조)",
+   "region": "대구",
    "type": "비정규직",
    "ncs": "보건.의료",
-   "end": "20261106",
-   "url": "https://www.comwel.or.kr/recruit/hp/main.do"
+   "end": "20261109",
+   "url": "https://www.knuch.kr:442/content/04info/11_01.asp?proc_type=view&b_num=5098&rtn_url=%2Fcontent%2F04info%2F11%5F01%2Easp"
   },
   {
    "inst": "국립공원공단",
@@ -400,85 +328,31 @@
    "url": "https://www.knps.or.kr/front/portal/recruit/recruitDtl.do?menuNo=7070064&emplyId=EMPM019989"
   },
   {
-   "inst": "동남권원자력의학원",
-   "title": "[직원채용] 정규직 의사직(마취통증의학과) 공개 채용",
-   "region": "부산",
-   "type": "정규직",
-   "ncs": "보건.의료",
-   "end": "20261109",
-   "url": "https://diramsjob.recruiter.co.kr/career/home"
-  },
-  {
-   "inst": "동남권원자력의학원",
-   "title": "[직원채용] 정규직 의사직(방사선비상진료센터) 채용",
-   "region": "부산",
-   "type": "정규직",
-   "ncs": "보건.의료",
-   "end": "20261109",
-   "url": "https://diramsjob.recruiter.co.kr/career/jobs/74345"
-  },
-  {
-   "inst": "동남권원자력의학원",
-   "title": "[직원채용] 별정직 의사직(산부인과) 채용",
-   "region": "부산",
+   "inst": "(재)우체국물류지원단",
+   "title": "우체국물류지원단 경인지사 안양,부평물류사업소 기간제(발착직, 대체인력) 채용 공고",
+   "region": "인천,경기",
    "type": "비정규직",
-   "ncs": "보건.의료",
-   "end": "20261109",
-   "url": "https://diramsjob.recruiter.co.kr/career/jobs/74348"
+   "ncs": "운전.운송",
+   "end": "20261110",
+   "url": "http://www.pola.or.kr"
   },
   {
-   "inst": "동남권원자력의학원",
-   "title": "[직원채용] 별정직 의사직(감염내과) 채용",
-   "region": "부산",
-   "type": "비정규직",
-   "ncs": "보건.의료",
-   "end": "20261109",
-   "url": "https://diramsjob.recruiter.co.kr/career/jobs/74349"
+   "inst": "주택관리공단(주)",
+   "title": "채용형 인턴 채용공고(주택관리공단 서울지사)",
+   "region": "서울",
+   "type": "청년인턴(채용형)",
+   "ncs": "건설,기계,전기.전자,환경.에너지.안전",
+   "end": "20261110",
+   "url": "www.kohom.or.kr"
   },
   {
-   "inst": "동남권원자력의학원",
-   "title": "[직원채용] 별정직 의사직(호흡기내과) 초빙",
-   "region": "부산",
-   "type": "비정규직",
-   "ncs": "보건.의료",
-   "end": "20261109",
-   "url": "https://diramsjob.recruiter.co.kr/career/jobs/74350"
-  },
-  {
-   "inst": "동남권원자력의학원",
-   "title": "[직원채용] 별정직 의사직(응급실) 공개채용",
-   "region": "부산",
-   "type": "비정규직",
-   "ncs": "보건.의료",
-   "end": "20261109",
-   "url": "https://diramsjob.recruiter.co.kr/career/home"
-  },
-  {
-   "inst": "동남권원자력의학원",
-   "title": "[직원채용] 별정직 의사직(병동 당직의) 공개 채용",
-   "region": "부산",
-   "type": "비정규직",
-   "ncs": "보건.의료",
-   "end": "20261109",
-   "url": "https://diramsjob.recruiter.co.kr/career/home"
-  },
-  {
-   "inst": "동남권원자력의학원",
-   "title": "[직원채용] 별정직 의사직(신경외과 전임의) 공개 채용(재공고)",
-   "region": "부산",
-   "type": "비정규직",
-   "ncs": "보건.의료",
-   "end": "20261109",
-   "url": "https://diramsjob.recruiter.co.kr/career/home"
-  },
-  {
-   "inst": "동남권원자력의학원",
-   "title": "[직원채용] 정규직 의사직(핵의학과) 공개 채용",
-   "region": "부산",
-   "type": "정규직",
-   "ncs": "보건.의료",
-   "end": "20261109",
-   "url": "https://diramsjob.recruiter.co.kr/career/home"
+   "inst": "학교법인한국폴리텍",
+   "title": "한국폴리텍 다솜고등학교 업무직(대학운영직_조리원)채용 공고(8차)",
+   "region": "충북",
+   "type": "무기계약직",
+   "ncs": "음식서비스",
+   "end": "20261110",
+   "url": "https://www.kopo.ac.kr/dasom/board.do?menu=2468&mode=view&post=788900"
   },
   {
    "inst": "학교법인한국폴리텍",
@@ -508,6 +382,24 @@
    "url": "https://www.kopo.ac.kr/changwon/board.do?menu=10551&mode=view&post=788743"
   },
   {
+   "inst": "학교법인한국폴리텍",
+   "title": "한국폴리텍대학 인천캠퍼스 업무직(대학운영직-사감) 채용 공고",
+   "region": "인천",
+   "type": "무기계약직",
+   "ncs": "경영.회계.사무,교육.자연.사회과학,경비.청소",
+   "end": "20261111",
+   "url": "https://www.kopo.ac.kr/incheon/board.do?menu=6900&mode=view&post=788931"
+  },
+  {
+   "inst": "학교법인한국폴리텍",
+   "title": "한국폴리텍대학 남대구캠퍼스 업무직(대학운영직_조리사) 채용(2차) 공고",
+   "region": "대구",
+   "type": "무기계약직",
+   "ncs": "음식서비스",
+   "end": "20261111",
+   "url": "https://www.kopo.ac.kr/namdaegu/board.do?menu=10548&mode=view&post=788957"
+  },
+  {
    "inst": "한국장애인고용공단",
    "title": "[한국장애인고용공단 서울남부지사] 교사직 대체근로자 채용 공고",
    "region": "서울",
@@ -517,13 +409,22 @@
    "url": "https://www.kead.or.kr/bbs/deptgongji/bbsView.do?pageIndex=1&menuId=MENU0895&bbsCode=deptgongji&bbsCnId=217295"
   },
   {
-   "inst": "한전KPS(주)",
-   "title": "한전KPS(주)충남전북전력지사(기술팀) 단기노무원 채용 공고",
-   "region": "대전,세종,충남",
+   "inst": "학교법인한국폴리텍",
+   "title": "한국폴리텍대학 남대구캠퍼스 행정지원직원(휴직대체_학사지원직) 채용 공고",
+   "region": "대구",
    "type": "비정규직",
-   "ncs": "전기.전자",
+   "ncs": "경영.회계.사무",
    "end": "20261111",
-   "url": "http://www.kps.co.kr"
+   "url": "https://www.kopo.ac.kr/namdaegu/board.do?menu=10548&mode=view&post=788808"
+  },
+  {
+   "inst": "서민금융진흥원",
+   "title": "2026년도 서민금융진흥원 제4차 기간제(민생지킴대출) 직원 채용 공고",
+   "region": "서울,부산,대구,인천,대전,울산,세종,경기,강원,충북,충남,전북,전남광주,경북,경남,제주",
+   "type": "비정규직",
+   "ncs": "경영.회계.사무,금융.보험",
+   "end": "20261112",
+   "url": "https://kinfa.scout.co.kr"
   },
   {
    "inst": "한국환경보전원",
@@ -607,15 +508,6 @@
    "url": "https://www.bohun.or.kr/busan/na/ntt/selectNttInfo.do?mi=33215&bbsId=1158&bbsSysId=busan&nttSn=190844"
   },
   {
-   "inst": "서민금융진흥원",
-   "title": "2026년도 서민금융진흥원 제4차 기간제(민생지킴대출) 직원 채용 공고",
-   "region": "서울,부산,대구,인천,대전,울산,세종,경기,강원,충북,충남,전북,전남광주,경북,경남,제주",
-   "type": "비정규직",
-   "ncs": "경영.회계.사무,금융.보험",
-   "end": "20261112",
-   "url": "https://kinfa.scout.co.kr"
-  },
-  {
    "inst": "한국수자원공사",
    "title": "[한국수자원공사] 파주수도지사 단기계약근로자(수탁운영_지방상수도 고객관리) 채용 공고(육아휴직 대체인력)",
    "region": "경기",
@@ -623,6 +515,24 @@
    "ncs": "경영.회계.사무",
    "end": "20261112",
    "url": "https://k-water.recruiter.co.kr"
+  },
+  {
+   "inst": "근로복지공단",
+   "title": "[정선병원] 별정직 의사(응급실전담의) 채용 공고",
+   "region": "강원",
+   "type": "정규직",
+   "ncs": "보건.의료",
+   "end": "20261113",
+   "url": "https://www.comwel.or.kr/recruit/hp/main.do"
+  },
+  {
+   "inst": "근로복지공단",
+   "title": "[순천병원] 의료직(산업위생사 4급) 채용 공고",
+   "region": "전남광주",
+   "type": "정규직",
+   "ncs": "보건.의료",
+   "end": "20261113",
+   "url": "https://www.comwel.or.kr/recruit/hp/main.do"
   },
   {
    "inst": "한국보훈복지의료공단",
@@ -724,40 +634,22 @@
    "url": "https://www.koref.or.kr"
   },
   {
-   "inst": "정보통신정책연구원",
-   "title": "정보통신정책연구원 무기계약직 직원(위촉행정원) 채용 공고",
-   "region": "충북",
-   "type": "무기계약직",
-   "ncs": "사업관리,경영.회계.사무",
-   "end": "20261113",
-   "url": "https://www.kisdi.re.kr/bbs/view.do?bbsSn=115177&key=m2101113056115&pageIndex=1&sc=&sw="
+   "inst": "국립공원공단",
+   "title": "[팔공산동부] 2026년 팔공산국립공원동부사무소 한시인력(국립공원지킴이) 직원 채용",
+   "region": "대구",
+   "type": "비정규직",
+   "ncs": "경비.청소,건설",
+   "end": "20261116",
+   "url": "https://www.knps.or.kr/front/portal/recruit/recruitDtl.do?menuNo=7070064&emplyId=EMPM020012"
   },
   {
-   "inst": "중소벤처기업연구원",
-   "title": "2026년도 제6차 중소벤처기업연구원 공개채용 공고",
-   "region": "서울",
-   "type": "정규직,비정규직",
-   "ncs": "정보통신,연구",
-   "end": "20261113",
-   "url": "https://recruit.kosi.re.kr"
-  },
-  {
-   "inst": "한국농어촌공사",
-   "title": "한국농어촌공사 금강사업단 공무직(청소원) 보훈·장애인 제한경쟁 채용공고",
-   "region": "전북",
-   "type": "무기계약직",
-   "ncs": "경비.청소",
-   "end": "20261113",
-   "url": "https://www.ekr.or.kr/planweb/board/view.krc?dataUid=8a8bb352a08a300001a176d48cbf232b&page=1&boardUid=402880317cc0644a017cc5e8000f06b7&contentUid=8a8bb3529665d7140199501cd3ef6280&searchType=&keyword=&categoryUid1=&categoryUid2=8a8bb3529665d714019951996437"
-  },
-  {
-   "inst": "대한적십자사",
-   "title": "경인권역재활병원 비정규직(기간제) 물리치료사 채용 공고(2026.12.1.임용)",
-   "region": "인천",
+   "inst": "한국보훈복지의료공단",
+   "title": "[부산보훈병원] 전문의(영상의학과) 긴급채용공고",
+   "region": "부산",
    "type": "비정규직",
    "ncs": "보건.의료",
-   "end": "20261113",
-   "url": "https://www.redcross.or.kr/redrecruit/"
+   "end": "20261116",
+   "url": "https://www.bohun.or.kr/busan/na/ntt/selectNttInfo.do?mi=33215&bbsId=1158&bbsSysId=busan&nttSn=190971"
   },
   {
    "inst": "한국보훈복지의료공단",
@@ -1012,13 +904,58 @@
    "url": "https://kosha.or.kr/notification/jobncontract/job/jobdata?bbsId=B2025021400005&pstNo=20261030092840M23MBV"
   },
   {
-   "inst": "한국산업단지공단",
-   "title": "2027년 제1차 계약직 채용 공고",
-   "region": "부산,대구,충남,전남광주",
+   "inst": "대한석탄공사",
+   "title": "2026년 한시적계약직 특별채용 공고(팀원급)",
+   "region": "강원",
    "type": "비정규직",
-   "ncs": "사업관리,경영.회계.사무",
-   "end": "20261116",
-   "url": "https://kicox.saramin.co.kr"
+   "ncs": "경영.회계.사무",
+   "end": "20261117",
+   "url": "https://www.kocoal.or.kr/newpage/newpage.php?f_id=recruit_apply"
+  },
+  {
+   "inst": "대한석탄공사",
+   "title": "2026년 한시적계약직 특별채용 공고(부장급)",
+   "region": "강원",
+   "type": "비정규직",
+   "ncs": "법률.경찰.소방.교도.국방",
+   "end": "20261117",
+   "url": "https://www.kocoal.or.kr/newpage/newpage.php?f_id=recruit_apply"
+  },
+  {
+   "inst": "대한석탄공사",
+   "title": "2026년 한시적계약직 특별채용 공고(팀장급)",
+   "region": "강원",
+   "type": "비정규직",
+   "ncs": "환경.에너지.안전",
+   "end": "20261117",
+   "url": "https://www.kocoal.or.kr/newpage/newpage.php?f_id=recruit_apply"
+  },
+  {
+   "inst": "한국국토정보공사",
+   "title": "2026년 한국국토정보공사 전문경력직(기계소방, 전기통신) 채용 공고",
+   "region": "충남,전북",
+   "type": "비정규직",
+   "ncs": "법률.경찰.소방.교도.국방,기계,전기.전자,정보통신,환경.에너지.안전",
+   "end": "20261117",
+   "url": "https://www.lx.or.kr/kor/BBSMSTR_000000000001/317/25724/view.do"
+  },
+  {
+   "inst": "한국국토정보공사",
+   "title": "2026년 한국국토정보공사 전문경력직(조교수_Geo AI 및 공간데이터 분석) 채용 공고",
+   "region": "충남",
+   "type": "비정규직",
+   "ncs": "교육.자연.사회과학",
+   "end": "20261117",
+   "url": "https://www.lx.or.kr/kor/BBSMSTR_000000000001/317/25725/view.do"
+  },
+  {
+   "inst": "한국국토정보공사",
+   "title": "2026년 하반기 한국국토정보공사 전문경력직(토지보상) 채용 공고",
+   "region": "전북",
+   "type": "비정규직",
+   "ncs": "경영.회계.사무,법률.경찰.소방.교도.국방,영업판매,건설",
+   "end": "20261117",
+   "url": "https://www.lx.or.kr/kor/BBSMSTR_000000000001/317/25726/view.do"
   },
   {
    "inst": "한국농어촌공사",
@@ -1219,6 +1156,105 @@
    "url": "https://nierecruit.fairy.im/announcement/detail/120"
   },
   {
+   "inst": "충북대학교병원",
+   "title": "2026년 11월 충북대학교병원 기간제근무자(응급구조사) 모집 공고",
+   "region": "충북",
+   "type": "비정규직",
+   "ncs": "보건.의료",
+   "end": "20261118",
+   "url": "https://cbnuh.recruiter.co.kr/app/jobnotice/view?systemKindCode=MRS2&jobnoticeSn=271179"
+  },
+  {
+   "inst": "충북대학교병원",
+   "title": "2026년 11월 충북대학교병원 기간제근무자 모집 공고",
+   "region": "충북",
+   "type": "비정규직",
+   "ncs": "보건.의료",
+   "end": "20261118",
+   "url": "https://cbnuh.recruiter.co.kr/app/jobnotice/view?systemKindCode=MRS2&jobnoticeSn=271173"
+  },
+  {
+   "inst": "충북대학교병원",
+   "title": "2026년도 제6차 충북대학교병원 신규직원 블라인드 채용 공고",
+   "region": "충북",
+   "type": "정규직",
+   "ncs": "보건.의료",
+   "end": "20261118",
+   "url": "https://cbnuh.recruiter.co.kr/appsite/company/index"
+  },
+  {
+   "inst": "한국원자력의학원",
+   "title": "2027년 한국원자력의학원 신규간호사 공개채용 공고",
+   "region": "서울",
+   "type": "정규직",
+   "ncs": "보건.의료",
+   "end": "20261118",
+   "url": "http://kirams.recruiter.co.kr"
+  },
+  {
+   "inst": "한국보훈복지의료공단",
+   "title": "[원주보훈요양원] 2026년 휴직대체 계약직(업무지원직) 공개채용",
+   "region": "강원",
+   "type": "비정규직",
+   "ncs": "사회복지.종교",
+   "end": "20261118",
+   "url": "https://www.bohun.or.kr/wjcare/na/ntt/selectNttInfo.do?mi=35524&bbsId=1314&bbsSysId=wjcare&nttSn=190977"
+  },
+  {
+   "inst": "한국보훈복지의료공단",
+   "title": "[원주보훈요양원] 2026년 제7차 요양보호직 공개채용",
+   "region": "강원",
+   "type": "정규직",
+   "ncs": "사회복지.종교",
+   "end": "20261118",
+   "url": "https://www.bohun.or.kr/wjcare/na/ntt/selectNttInfo.do?mi=35524&bbsId=1314&bbsSysId=wjcare&nttSn=190975"
+  },
+  {
+   "inst": "한전KDN",
+   "title": "한전KDN(주) 경남사업처 배전자동화 성능관리분야 비정규직 모집공고",
+   "region": "경남",
+   "type": "비정규직",
+   "ncs": "전기.전자,정보통신",
+   "end": "20261118",
+   "url": "없음."
+  },
+  {
+   "inst": "한국원자력의학원",
+   "title": "제2026-6기 한국원자력의학원 별정직(일반 및 장애인) 정기공개채용",
+   "region": "서울",
+   "type": "비정규직",
+   "ncs": "보건.의료,연구",
+   "end": "20261118",
+   "url": "http://kirams.recruiter.co.kr"
+  },
+  {
+   "inst": "대한적십자사",
+   "title": "[강원혈액원] 2026년 대체인력(임상병리사) 채용 공고",
+   "region": "강원",
+   "type": "비정규직",
+   "ncs": "보건.의료",
+   "end": "20261118",
+   "url": "https://www.redcross.or.kr/redrecruit"
+  },
+  {
+   "inst": "대한적십자사",
+   "title": "[강원혈액원] 2026년 초단시간(간호사) 채용 공고",
+   "region": "강원",
+   "type": "비정규직",
+   "ncs": "보건.의료",
+   "end": "20261118",
+   "url": "https://www.redcross.or.kr/redrecruit"
+  },
+  {
+   "inst": "대한적십자사",
+   "title": "[강원혈액원] 2026년 한시적근로자(사무보조) 채용 공고",
+   "region": "강원",
+   "type": "비정규직",
+   "ncs": "경영.회계.사무",
+   "end": "20261118",
+   "url": "https://www.redcross.or.kr/redrecruit"
+  },
+  {
    "inst": "(주)한국가스기술공사",
    "title": "‘26년도 제4차 에너지인프라운영처 기간제 계약직 채용 공고",
    "region": "서울,대전,경기,강원,충남,전북,제주",
@@ -1246,6 +1282,24 @@
    "url": "http://kipi.recruiter.co.kr"
   },
   {
+   "inst": "한국농어촌공사",
+   "title": "한국농어촌공사 철원화천지사 공무직(청소원) 보훈ㆍ장애인 제한경쟁 채용 공고",
+   "region": "강원",
+   "type": "무기계약직",
+   "ncs": "경비.청소",
+   "end": "20261119",
+   "url": "https://www.ekr.or.kr/planweb/board/view.krc?dataUid=8a8bb352a08a300001a1a3d7ab4d05bb&page=1&boardUid=402880317cc0644a017cc5e8000f06b7&contentUid=8a8bb3529665d7140199501cd3ef6280&searchType=&keyword=&categoryUid1=&categoryUid2=8a8bb3529665d714019951996437"
+  },
+  {
+   "inst": "한국농어촌공사",
+   "title": "한국농어촌공사 청주지사 공무직(청소원) 보훈·장애인 제한경쟁 채용공고",
+   "region": "충북",
+   "type": "무기계약직",
+   "ncs": "경비.청소",
+   "end": "20261119",
+   "url": "https://www.ekr.or.kr/planweb/board/view.krc?dataUid=8a8bb352a08a300001a1a3c3f7aa02bf&page=1&boardUid=402880317cc0644a017cc5e8000f06b7&contentUid=8a8bb3529665d7140199501cd3ef6280&searchType=&keyword=&categoryUid1=&categoryUid2=8a8bb3529665d714019951996437"
+  },
+  {
    "inst": "대한무역투자진흥공사",
    "title": "Invest KOREA 대표 채용",
    "region": "서울",
@@ -1253,6 +1307,15 @@
    "ncs": "사업관리,경영.회계.사무",
    "end": "20261119",
    "url": "https://kotra.careerlink.kr/"
+  },
+  {
+   "inst": "한국중부발전(주)",
+   "title": "2026년도 기간제근로자 채용 공고",
+   "region": "인천,충남",
+   "type": "비정규직",
+   "ncs": "경영.회계.사무,전기.전자,환경.에너지.안전",
+   "end": "20261119",
+   "url": "https://www.komipo.co.kr"
   },
   {
    "inst": "학교법인한국폴리텍",
@@ -1273,15 +1336,6 @@
    "url": "https://www.kisdi.re.kr/bbs/view.do?bbsSn=115179&key=m2101113056115&pageIndex=1&sc=&sw="
   },
   {
-   "inst": "한국노동연구원",
-   "title": "한국노동연구원 연구위원 직군 채용 공고",
-   "region": "세종",
-   "type": "정규직",
-   "ncs": "연구",
-   "end": "20261210",
-   "url": "https://kli.recruiter.co.kr/appsite/company/index"
-  },
-  {
    "inst": "부산대학교병원",
    "title": "외상외과(마취통증의학과 전문의) 모집",
    "region": "부산",
@@ -1293,60 +1347,6 @@
   {
    "inst": "경상국립대학교병원",
    "title": "전문직1등급(촉탁의, 치과) 채용공고",
-   "region": "경남",
-   "type": "비정규직",
-   "ncs": "보건.의료",
-   "end": "20261231",
-   "url": "https://gnuh.recruiter.co.kr/"
-  },
-  {
-   "inst": "경상국립대학교병원",
-   "title": "전문직1등급(촉탁의, 응급의학과) 채용공고",
-   "region": "경남",
-   "type": "비정규직",
-   "ncs": "보건.의료",
-   "end": "20261231",
-   "url": "https://gnuh.recruiter.co.kr/"
-  },
-  {
-   "inst": "경상국립대학교병원",
-   "title": "전문직1등급(촉탁의, 외과) 채용공고",
-   "region": "경남",
-   "type": "비정규직",
-   "ncs": "보건.의료",
-   "end": "20261231",
-   "url": "https://gnuh.recruiter.co.kr/"
-  },
-  {
-   "inst": "경상국립대학교병원",
-   "title": "전문직1등급(촉탁의, 소아청소년과) 채용공고",
-   "region": "경남",
-   "type": "비정규직",
-   "ncs": "보건.의료",
-   "end": "20261231",
-   "url": "https://gnuh.recruiter.co.kr/"
-  },
-  {
-   "inst": "경상국립대학교병원",
-   "title": "전문직1등급(촉탁의, 내과) 채용공고",
-   "region": "경남",
-   "type": "비정규직",
-   "ncs": "보건.의료",
-   "end": "20261231",
-   "url": "https://gnuh.recruiter.co.kr/"
-  },
-  {
-   "inst": "경상국립대학교병원",
-   "title": "계약직(이브닝전담당직 약사) 채용공고",
-   "region": "경남",
-   "type": "비정규직",
-   "ncs": "보건.의료",
-   "end": "20261231",
-   "url": "https://gnuh.recruiter.co.kr/"
-  },
-  {
-   "inst": "경상국립대학교병원",
-   "title": "계약직(야간전담당직 약사) 채용공고",
    "region": "경남",
    "type": "비정규직",
    "ncs": "보건.의료",
